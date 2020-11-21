@@ -286,7 +286,7 @@ namespace AIMS3.BackEnd.Modules
 				GetStatistics();
 				Zone1.Voltage = Voltage[0];
 				Zone2.Voltage = Voltage[1];
-				Temperature = (string)Status[Status.Length - 1];
+				Temperature = Status[Status.Length - 1].ToString();
 				RefreshIconsText();
 
 				if (Status.Length == StatusCount)
