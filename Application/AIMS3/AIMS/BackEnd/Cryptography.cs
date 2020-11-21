@@ -346,7 +346,7 @@ namespace AIMS3.BackEnd.Cryptography
 	{
 		public static string Hash(string input)
 		{
-			using (var shaM = new MD5Cng())
+			using (SHA512 shaM = new SHA512Managed())
 			{
 				return Encoding.ASCII.GetString(shaM.ComputeHash(Encoding.ASCII.GetBytes(input)));
 			}
