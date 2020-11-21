@@ -1,0 +1,121 @@
+﻿<interfaces:ZoneView
+	xmlns:interfaces="clr-namespace:AIMS3.FrontEnd.Modules.Interfaces"
+	x:Class="AIMS3.FrontEnd.Modules.EF.EFZoneView"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:Common="clr-namespace:AIMS3.FrontEnd.Modules.Common"
+	xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+	xmlns:sys="clr-namespace:System;assembly=mscorlib"
+	mc:Ignorable="d"
+	Height="Auto" Width="Auto">
+
+	<interfaces:ZoneView.BindingGroup>
+		<BindingGroup Name="BindingGroup"/>
+	</interfaces:ZoneView.BindingGroup>
+
+	<Grid Width="Auto" Height="Auto">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="Auto"/>
+		</Grid.ColumnDefinitions>
+
+		<Grid Grid.Column="0" Width="Auto" Height="Auto">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+
+			<TextBlock Grid.Row="0" Name="textBlockName" Grid.ColumnSpan="2"
+						  Margin="3" FontSize="16" FontWeight="UltraBold"/>
+
+			<dxe:CheckEdit Grid.Row="1" Grid.Column="0" Name="checkEditEnabled" Margin="3"
+						   Content="{DynamicResource Enabled}"
+						   Checked="Enabled_Checked"
+						   IsChecked="{Binding Enabled, BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+
+			<dxe:CheckEdit Grid.Row="2" Name="checkEditAutomaticReset"
+                           Content="{DynamicResource AutomaticReset}" Margin="3"
+                           IsChecked="{Binding AutomaticReset, BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+
+			<dxe:CheckEdit Grid.Row="3" Grid.Column="0" Name="checkEditHV"
+                           Content="HV" Margin="3"
+						   Unchecked="HVLV_Unchecked"
+                           IsChecked="{Binding HV, BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+
+			<dxe:CheckEdit Grid.Row="4" Grid.Column="0" Name="checkEditLV"
+                           Content="LV" Margin="3"
+						   Unchecked="HVLV_Unchecked"
+                           IsChecked="{Binding LV, BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+
+			<TextBlock Grid.Row="1" Grid.Column="1" Text="{DynamicResource Power}"
+					   Margin="3" VerticalAlignment="Center"/>
+
+			<dxe:SpinEdit Name="spinEditPower" Grid.Row="1" Grid.Column="2"
+						  Margin="3" IsTextEditable="True" ShowEditorButtons="True"
+						  EditValueType="{x:Type sys:Int32}"
+						  EditValue="{Binding Power, BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+						  MinValue="30" MaxValue="100" Width="60" x:FieldModifier="public"
+						  EditValueChanged="Power_Changed"/>
+
+			<TextBlock Grid.Row="2" Grid.Column="1" Text="{DynamicResource Threshold}"
+					   Margin="3" VerticalAlignment="Center"/>
+
+			<dxe:SpinEdit Name="spinEditThreshold" Grid.Row="2" Grid.Column="2"
+						  Margin="3" IsTextEditable="True" ShowEditorButtons="True"
+						  EditValueType="{x:Type sys:Int32}"
+						  EditValue="{Binding Threshold, BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+						  MinValue="100" Width="60" x:FieldModifier="public"
+						  MaxValue="{Binding MaxThreshold, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Increment="50"/>
+
+			<TextBlock Grid.Row="3" Grid.Column="1" Text="{DynamicResource Repeat}"
+					   Margin="3" VerticalAlignment="Center"/>
+
+			<dxe:SpinEdit Name="spinEditRepeat" Grid.Row="3" Grid.Column="3" x:FieldModifier="public"
+						  Margin="3" IsTextEditable="True" ShowEditorButtons="True"
+						  EditValueType="{x:Type sys:Int32}"
+						  EditValue="{Binding Repeat, BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+						  MinValue="1" MaxValue="9" Width="60"/>
+
+			<Border Grid.Row="1" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="3"
+					BorderThickness="1" BorderBrush="Gray"/>
+
+			<Border Grid.Row="2" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="3"
+					BorderThickness="1" BorderBrush="Gray"/>
+
+			<Border Grid.Row="3" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="3"
+					BorderThickness="1" BorderBrush="Gray"/>
+
+			<Border Grid.Row="4" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="3"
+					BorderThickness="1" BorderBrush="Gray"/>
+
+			<Border Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="1" Grid.RowSpan="4"
+					BorderThickness="1" BorderBrush="White"/>
+
+			<Border Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="4"
+					BorderThickness="1" BorderBrush="White"/>
+		</Grid>
+
+		<Common:RelayAssign x:Name="relayAssign" Grid.Column="1"
+							Width="Auto" Height="137" VerticalAlignment="Stretch" Margin="1"/>
+
+		<Common:CameraAssign x:Name="cameraAssign" Grid.Column="2"
+							 Width="Auto" Height="137" VerticalAlignment="Stretch" Margin="1"/>
+
+		<Border Grid.Column="0" BorderThickness="1" BorderBrush="White"/>
+		<Border Grid.Column="1" BorderThickness="1" BorderBrush="White"/>
+		<Border Grid.Column="2" BorderThickness="1" BorderBrush="White"/>
+	</Grid>
+</interfaces:ZoneView>

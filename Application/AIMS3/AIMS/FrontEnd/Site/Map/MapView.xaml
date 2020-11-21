@@ -1,0 +1,21 @@
+﻿<interfaces:AIMSUserControl
+	xmlns:interfaces="clr-namespace:AIMS3.FrontEnd.Interfaces"
+	x:Class="AIMS3.FrontEnd.Site.Map.MapView"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	mc:Ignorable="d"
+	VerticalContentAlignment="Stretch" HorizontalAlignment="Stretch"
+	Width="Auto" Height="Auto"
+	SizeChanged="Map_SizeChanged">
+
+	<Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+		<Image x:Name="image" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+			   Stretch="Uniform"
+			   SizeChanged="Image_SizeChanged"
+			   Source="pack://application:,,,/Resources/DefaultMap.png"/>
+
+		<Canvas Name="canvas" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+    </Grid>
+</interfaces:AIMSUserControl>

@@ -1,0 +1,43 @@
+﻿<interfaces:SettingsPopUp
+	xmlns:interfaces="clr-namespace:AIMS3.FrontEnd.Modules.Interfaces"
+    x:Class="AIMS3.FrontEnd.Modules.FG.FGPopUp"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+	xmlns:FG="clr-namespace:AIMS3.FrontEnd.Modules.FG"
+	Title="{Binding Name, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+	SizeToContent="WidthAndHeight"
+	Topmost="True" ControlBoxButtonSet="Close"
+	ShowInTaskbar="False" ResizeMode="NoResize"
+	Closing="Window_Closing">
+	
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		
+		<FG:FGZoneView Grid.Row="0" Margin="3" x:Name="view"/>
+		
+		<StackPanel Grid.Row="1" Orientation="Horizontal"
+					HorizontalAlignment="Left">
+			<dx:SimpleButton Margin="3"
+						 Content="{DynamicResource Save}"
+						 Width="{DynamicResource ButtonWidth}"
+						 Height="{DynamicResource ButtonHeight}"
+						 Click="Save_Click"/>
+			
+			<dx:SimpleButton Margin="3"
+						 Content="{DynamicResource Default}"
+						 Width="{DynamicResource ButtonWidth}"
+						 Height="{DynamicResource ButtonHeight}"
+						 Click="Default_Click"/>
+			
+			<dx:SimpleButton Margin="3"
+						 Content="{DynamicResource Test}"
+						 Width="{DynamicResource ButtonWidth}"
+						 Height="{DynamicResource ButtonHeight}"
+						 Click="Test_Click"/>
+		</StackPanel>
+	</Grid>
+</interfaces:SettingsPopUp>

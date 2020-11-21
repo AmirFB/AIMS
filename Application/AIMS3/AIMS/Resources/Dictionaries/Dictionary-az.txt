@@ -1,0 +1,226 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+	<!--Allignment-->
+	<HorizontalAlignment x:Key="HorizontalAlignment">Left</HorizontalAlignment>
+	<HorizontalAlignment x:Key="InverseHorizontalAlignment">Right</HorizontalAlignment>
+	
+	<!--General-->
+	<system:String x:Key="Cancel">Cancel</system:String>
+    <system:String x:Key="Select">Select</system:String>
+    <system:String x:Key="Save">Save</system:String>
+    <system:String x:Key="Default">Default</system:String>
+	<system:String x:Key="New">New</system:String>
+	<system:String x:Key="Delete">Delete</system:String> 
+	<system:String x:Key="Name">Name</system:String>
+	<system:String x:Key="Language">Language</system:String>
+	<system:String x:Key="OK">OK</system:String>
+	<system:String x:Key="Apply">Apply</system:String>
+	<system:String x:Key="Logout">Logout</system:String>
+	<system:String x:Key="Exit">Exit</system:String>
+	<system:String x:Key="Console">Console</system:String>
+	
+	<!--Console--> 
+	<system:String x:Key="_New">_New</system:String>
+	<system:String x:Key="_Logout">_Logout</system:String>
+	
+	<!--Settings-->
+	<system:String x:Key="Serial">Serial</system:String>
+	<system:String x:Key="TimeoutBias">Timeout Bias</system:String>
+	<system:String x:Key="DelayBias">Delay Bias</system:String>
+	
+	<!--Login-->
+    <system:String x:Key="Username">Username</system:String>
+    <system:String x:Key="Password">Password</system:String>
+	<system:String x:Key="Login">Login</system:String>
+	<system:String x:Key="NullUsername">Please Enter Username</system:String>
+	<system:String x:Key="NullPassword">Please Enter Password</system:String>
+	
+	<!--Users-->
+	<system:String x:Key="Users">Users</system:String>
+	<system:String x:Key="Authority">Authority</system:String>
+	<system:String x:Key="Modify">Modify</system:String>
+	<system:String x:Key="NewPassword">New Password</system:String>
+	<system:String x:Key="OldPassword">Old Password</system:String>
+	<system:String x:Key="ConfirmPassword">Confirm Password</system:String>
+	<system:String x:Key="NullNewPassword">Please Enter New Password</system:String>
+	<system:String x:Key="NullOldPassword">Please Enter Old Password</system:String>
+	<system:String x:Key="NullConfirmPassword">Please Enter Confirm Password</system:String>
+	<system:String x:Key="PasswordsMatch">Password and its confirm match.</system:String>
+	<system:String x:Key="PasswordsNotMatch">Password and its confirm don't match.</system:String>
+
+	<!--Modules-->
+    <system:String x:Key="Alarm">Alarm</system:String>
+    <system:String x:Key="Module">Module</system:String>
+    <system:String x:Key="Camera">Camera</system:String>
+    <system:String x:Key="Preset">Preset</system:String>
+    <system:String x:Key="Sound">Sound</system:String>
+	<system:String x:Key="AutomaticReset">Automatic Reset</system:String>
+	<system:String x:Key="Tamper">Tamper</system:String>
+	<system:String x:Key="Zone">Zone</system:String>
+	<system:String x:Key="Zone1">Zone1</system:String>
+	<system:String x:Key="Zone2">Zone2</system:String>
+	<system:String x:Key="Connection">Connection</system:String>
+	<system:String x:Key="Address">Adress</system:String>
+	<system:String x:Key="Port">Port</system:String>
+	<system:String x:Key="Enabled">Enabled</system:String>
+	<system:String x:Key="Encryption">Encryption</system:String>
+	<system:String x:Key="Encrypted">Encrypted</system:String>
+	<system:String x:Key="Raw">Raw</system:String>
+	<system:String x:Key="Connected">Connected</system:String>
+	<system:String x:Key="NotConnected">Not Found</system:String>
+	<system:String x:Key="Set">Set</system:String>
+	<system:String x:Key="Reset">Reset</system:String>
+	<system:String x:Key="Fault">Fault</system:String>
+	<system:String x:Key="Relay">Relay</system:String>
+
+	<!--Modules.EF-->
+    <system:String x:Key="Power">Power</system:String>
+    <system:String x:Key="Threshold">Threshold</system:String>
+	<system:String x:Key="Repeat">Repeat</system:String>
+	<system:String x:Key="Type">Type</system:String>
+
+	<!--Modules.FG-->
+	<system:String x:Key="Sensitivity">Sensitivity</system:String>
+	<system:String x:Key="Pulses">Pulses</system:String>
+	<system:String x:Key="TimeWindow">TimeWindow</system:String>
+	<system:String x:Key="Pretime">Pretime</system:String>
+	
+	<!--Modules.Cam-->
+	<system:String x:Key="Home">Home</system:String>
+	<system:String x:Key="GoHome">Go Home</system:String>
+	<system:String x:Key="SetHome">Set Home</system:String>
+	<system:String x:Key="GoPreset">Go To</system:String>
+	<system:String x:Key="Cache">Cache</system:String>
+    <system:String x:Key="Index">Index</system:String>
+    <system:String x:Key="Play">Play</system:String>
+    <system:String x:Key="Stop">Stop</system:String>
+	<system:String x:Key="Profile">Profile</system:String>
+	<system:String x:Key="Brand">Brand</system:String>
+	
+	<!--HomeMenu-->
+	<system:String x:Key="_File">_File</system:String>
+	<system:String x:Key="_Console">_Console</system:String>
+	<system:String x:Key="_Users">_Users</system:String>
+	<system:String x:Key="_Report">_Report</system:String>
+	<system:String x:Key="_Exit">_Exit</system:String>
+
+	<system:String x:Key="_View">_View</system:String>
+	<system:String x:Key="_ShowStatistics">_Statistics</system:String>
+	<system:String x:Key="_ShowTemperature">_Temperature</system:String>
+	
+	<system:String x:Key="_Tools">_Tools</system:String>
+	<system:String x:Key="_Settings">_Settings</system:String>
+	<system:String x:Key="_Modules">_Modules</system:String>
+	<system:String x:Key="Sea_rch">Sea_rch</system:String>
+	
+	<system:String x:Key="_Map">_Map</system:String>
+	<system:String x:Key="_Toolbar">_Toolbar</system:String>
+	<system:String x:Key="_Upload">_Upload</system:String>
+
+	<!--Map-->
+	<system:String x:Key="ClearAll">Clear All</system:String>
+	<system:String x:Key="Mute">Mute</system:String>
+	<system:String x:Key="ShowStattistics">Stattistics</system:String>
+	<system:String x:Key="ShowTemperature">Temperature</system:String>
+    
+    <!--Map.ContextMenu-->
+    <system:String x:Key="Test">Test</system:String>
+    <system:String x:Key="Settings">Settings</system:String>
+    <system:String x:Key="Remove">Remove</system:String>
+	<system:String x:Key="Status">Status</system:String>
+
+	<!--Log-->
+	<system:String x:Key="Date">Date</system:String>
+	<system:String x:Key="Time">Time</system:String>
+	<system:String x:Key="Description">Description</system:String>
+	<system:String x:Key="Reason">Reason</system:String>
+	<system:String x:Key="User">User</system:String>
+	<system:String x:Key="Show">Show</system:String>
+
+	<!--Messages.Main-->
+	<system:String x:Key="AskLogout">Are you sure you want to logout?</system:String>
+	<system:String x:Key="AskExit">Are you sure you want exit AIMS?</system:String>
+	<system:String x:Key="LoadingDevicesFailed">A problem occured while loading devices from database.</system:String>
+	<system:String x:Key="OutOf">out of</system:String>
+	<system:String x:Key="Failed">failed</system:String>
+	
+	<!--Messages.Modules-->
+	<system:String x:Key="Initialized">Initialized Successfully</system:String>
+	<system:String x:Key="NotInitialized">Initialization Failed</system:String>
+    <system:String x:Key="AskIfDeleteModule">Are you sure you want to delete this module?</system:String>
+    <system:String x:Key="SaveFailure">Save Failure</system:String>
+    <system:String x:Key="IndexExists">Index already exists.</system:String>
+    <system:String x:Key="AddressExists">Address already exists.</system:String>
+    <system:String x:Key="EndPointExists">IP, Port and Address already exists.</system:String>
+    <system:String x:Key="IPExists">IP already exists.</system:String>
+
+    <!--Messages.Login-->
+	<system:String x:Key="UserPassWrong">The entered username or password is wrong.</system:String>
+
+	<!--Messages.Lock-->
+	<system:String x:Key="LockNotFound">Hardware Lock not found. Please insert lock and run AIMS again.</system:String>
+
+	<!--Messages.Users--> 
+	<system:String x:Key="UsernameEmpty">Please enter username.</system:String>
+	<system:String x:Key="PasswordsAndConfirmEmpty">Please enter password and its confirm.</system:String>
+	<system:String x:Key="UserNotFound">User not found.</system:String>
+	<system:String x:Key="UserExists">User already exists.</system:String>
+	<system:String x:Key="NotAuthorized">You are not authorized to do that.</system:String>
+	<system:String x:Key="AskDelete">Are you sure your want to delete this user?</system:String>
+	<system:String x:Key="NotYourself">You can't delete current user.</system:String>
+
+	<!--Messages.Map-->
+    <system:String x:Key="AskClearAllIcons">Do you want to clear all the icons on the map?</system:String>
+    <system:String x:Key="AskTurnZoneOn">Do you want to turn this zone on?</system:String>
+    <system:String x:Key="AskTurnZoneOff">Do you want to turn this zone off?</system:String>
+
+    <!--Messages.Faults-->
+	<system:String x:Key="NotObviated">Fault is not obviated.</system:String>
+
+	<!--Messages.DataBAse-->
+	<system:String x:Key="DataBaseSaveFailed">Something went wrong while saving database.</system:String>
+	<system:String x:Key="DataBaseFailed">Database Failed</system:String>
+	<system:String x:Key="SiteConfigSaveFailed">Something went wrong while saving site config.</system:String>
+	<system:String x:Key="SiteConfigLoadFailed">Something went wrong while loading site config.</system:String>
+	<system:String x:Key="ConfigSaveFailed">Something went wrong while saving config.</system:String>
+
+	<!--ElectroFence-->
+	<system:String x:Key="Error">Error</system:String>
+	<system:String x:Key="Healthy">OK</system:String>
+	<system:String x:Key="Faulty">Fault</system:String>
+	<system:String x:Key="Disconnected">Disonnected</system:String>
+	<system:String x:Key="Connectedy">Connected</system:String>
+	<system:String x:Key="Charging">Charging</system:String>
+	<system:String x:Key="NotCharging">Not Charging</system:String>
+
+	<!--Faults-->
+	<system:String x:Key="ResetFault">Reset</system:String>
+	<system:String x:Key="Acknowledge">Acknowledge</system:String>
+
+	<!--Telemetric-->
+	<system:String x:Key="ClientError">Client Error</system:String>
+	<system:String x:Key="ClientNotConnected">Client disconnected.</system:String>
+	<system:String x:Key="ClientNotAuthorized">Authoriztion with client Failed.</system:String>
+
+	<!--SiteModulesStatus-->
+	<system:String x:Key="ModulesStatus">Modules Status</system:String>
+	<system:String x:Key="ModuleType">Module Type</system:String>
+	<system:String x:Key="ElectroFence">Electro Fence</system:String>
+	<system:String x:Key="FlexiGuard">Flexi Guard</system:String>
+	<system:String x:Key="AlarmControlUnit">Alarm Control Unit</system:String>
+	<system:String x:Key="CountConnected">Count/Connected</system:String>
+	<system:String x:Key="ConnectionType">Connection Type</system:String>
+	<system:String x:Key="NoFaults">No Faults</system:String>
+
+	<!--SiteModulesStatus-->
+	<system:String x:Key="Refresh">Refresh</system:String>
+
+	<!--SiteDetails-->
+	<system:String x:Key="Access">Access: </system:String>
+	<system:String x:Key="Local">Local</system:String>
+	<system:String x:Key="Remote">Remote</system:String>
+	<system:String x:Key="LocalConnections">Local Connections</system:String>
+	<system:String x:Key="TelemetricConnections">Telemetric Connections</system:String>
+</ResourceDictionary>

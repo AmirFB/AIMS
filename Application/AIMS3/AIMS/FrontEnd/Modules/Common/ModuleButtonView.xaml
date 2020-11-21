@@ -1,0 +1,43 @@
+﻿<interfaces:AIMSUserControl
+	xmlns:interfaces="clr-namespace:AIMS3.FrontEnd.Interfaces"
+	x:Class="AIMS3.FrontEnd.Modules.Common.ModuleButtonView"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+	mc:Ignorable="d">
+
+	<StackPanel Orientation="Horizontal">
+		<dx:SimpleButton Name="simpleButtonCheck" x:FieldModifier="public"
+						 Content="{DynamicResource Check}"
+						 Width="{DynamicResource ButtonWidth}"
+						 Height="{DynamicResource ButtonHeight}"
+						 Margin="3"/>
+
+		<dx:SimpleButton Name="simpleButtonApply" x:FieldModifier="public"
+						 Content="{DynamicResource Apply}"
+						 Width="{DynamicResource ButtonWidth}"
+						 Height="{DynamicResource ButtonHeight}"
+						 Margin="3"
+						 Visibility="{Binding LocalVisibility}"/>
+
+		<dx:SimpleButton Name="simpleButtonSave" x:FieldModifier="public"
+						 Content="{DynamicResource Save}"
+						 Width="{DynamicResource ButtonWidth}"
+						 Height="{DynamicResource ButtonHeight}"
+						 Margin="3"/>
+
+		<dx:SimpleButton Name="simpleButtonDefault" x:FieldModifier="public"
+						 Content="{DynamicResource Default}"
+						 Width="{DynamicResource ButtonWidth}"
+						 Height="{DynamicResource ButtonHeight}"
+						 Margin="3"/>
+
+		<dx:SimpleButton Name="simpleButtonDelete" x:FieldModifier="public"
+						 Content="{DynamicResource Delete}"
+						 Width="{DynamicResource ButtonWidth}"
+						 Height="{DynamicResource ButtonHeight}"
+						 Margin="3"/>
+	</StackPanel>
+</interfaces:AIMSUserControl>

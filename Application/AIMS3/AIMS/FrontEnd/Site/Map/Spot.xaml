@@ -1,0 +1,76 @@
+﻿<UserControl
+	x:Class="AIMS3.FrontEnd.Site.Map.Spot"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	mc:Ignorable="d"
+	MouseDoubleClick="Spot_DoubleClick" MouseRightButtonDown="Spot_RightClick">
+
+	<UserControl.ContextMenu>
+		<ContextMenu Name="contextMenu">
+			<ContextMenu.BindingGroup>
+				<BindingGroup Name="BindingGroupContextMenu"/>
+			</ContextMenu.BindingGroup>
+			
+			<MenuItem Header="{DynamicResource Test}"
+                      Click="Test_Click"
+					  Visibility="{Binding TestVisibility, BindingGroupName=BindingGroupContextMenu, Mode=OneWay, UpdateSourceTrigger=Explicit}"/>
+			
+			<MenuItem Header="{DynamicResource Set}"
+                      Click="Set_Click"
+					  StaysOpenOnClick="True"
+					  IsEnabled="{Binding CanSet, BindingGroupName=BindingGroupContextMenu, Mode=OneWay, UpdateSourceTrigger=Explicit}"
+					  Visibility="{Binding SetVisibility, BindingGroupName=BindingGroupContextMenu, Mode=OneWay, UpdateSourceTrigger=Explicit}"/>
+			
+			<MenuItem Header="{DynamicResource Reset}"
+                      Click="ResetR_Click"
+					  StaysOpenOnClick="True"
+					  IsEnabled="{Binding CanReset, BindingGroupName=BindingGroupContextMenu, Mode=OneWay, UpdateSourceTrigger=Explicit}"
+					  Visibility="{Binding ResetVisibility, BindingGroupName=BindingGroupContextMenu, Mode=OneWay, UpdateSourceTrigger=Explicit}"/>
+			
+			<MenuItem Header="{DynamicResource Remove}"
+					  IsEnabled="{Binding CanRemove, BindingGroupName=BindingGroupContextMenu, Mode=OneWay, UpdateSourceTrigger=Explicit}"
+                      Click="Remove_Click"/>
+
+			<MenuItem Header="{DynamicResource Acknowledge}"
+                      Click="Acknowledge_Click"
+					  StaysOpenOnClick="True"
+					  Visibility="{Binding AcknowledgeVisibility, BindingGroupName=BindingGroupContextMenu, Mode=OneWay, UpdateSourceTrigger=Explicit}"
+					  IsEnabled="{Binding CanAcknowledge, BindingGroupName=BindingGroupContextMenu, Mode=OneWay, UpdateSourceTrigger=Explicit}"/>
+
+			<MenuItem Header="{DynamicResource Reset}"
+                      Click="ResetF_Click"
+					  StaysOpenOnClick="True"
+					  Visibility="{Binding AcknowledgeVisibility, BindingGroupName=BindingGroupContextMenu, Mode=OneWay, UpdateSourceTrigger=Explicit}"
+					  IsEnabled="{Binding CanResetF, BindingGroupName=BindingGroupContextMenu, Mode=OneWay, UpdateSourceTrigger=Explicit}"/>
+
+			<MenuItem Header="{DynamicResource Status}"
+                      Click="Status_Click"
+					  Visibility="{Binding StatusVisibility, BindingGroupName=BindingGroupContextMenu, Mode=OneWay, UpdateSourceTrigger=Explicit}"/>
+
+			<MenuItem Header="{DynamicResource Settings}"
+					  IsEnabled="{DynamicResource CanSettings}"
+					  Visibility="{Binding SettingsVisibility, BindingGroupName=BindingGroupContextMenu, Mode=OneWay, UpdateSourceTrigger=Explicit}"
+					  Click="Settings_Click"/>
+        </ContextMenu>
+    </UserControl.ContextMenu>
+	
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Image Grid.Row="0" Name="imageEdit"
+			   Width="40" Height="40"
+			   Source="{Binding ImageSource, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+		
+		<TextBlock Grid.Row="2" Name="textBlock"
+				   Text="{Binding Text, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+				   Background="{Binding BackgroundBrush, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+				   Foreground="{Binding ForegroundBrush, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+				   HorizontalAlignment="Center" TextAlignment="Center" Padding="1"/>
+    </Grid>
+</UserControl>

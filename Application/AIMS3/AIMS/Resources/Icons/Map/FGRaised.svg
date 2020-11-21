@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="477.60001pt"
+   viewBox="0 0 477.60001 477.60001"
+   width="477.60001pt"
+   version="1.1"
+   id="svg38"
+   sodipodi:docname="FGRaised.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata44">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs42" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     id="namedview40"
+     showgrid="false"
+     inkscape:zoom="1.0482236"
+     inkscape:cx="225.30664"
+     inkscape:cy="288.50863"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg38" />
+  <path
+     d="m477.601562 238.800781c0 131.886719-106.914062 238.800781-238.800781 238.800781s-238.800781-106.914062-238.800781-238.800781 106.914062-238.800781 238.800781-238.800781 238.800781 106.914062 238.800781 238.800781zm0 0"
+     fill="#382b73"
+     id="path2"
+     style="fill:#aa0000" />
+  <path
+     d="m445.398438 238.800781c0 114.101563-92.496094 206.597657-206.597657 206.597657-114.101562 0-206.597656-92.496094-206.597656-206.597657 0-114.101562 92.496094-206.597656 206.597656-206.597656 114.101563 0 206.597657 92.496094 206.597657 206.597656zm0 0"
+     id="path4"
+     style="fill:#ff0000"
+     fill="#473080" />
+  <g
+     id="g117"
+     transform="matrix(0.8114673,0,0,0.8114673,455.25163,83.534827)">
+    <g
+       transform="matrix(0.75000003,0,0,0.75000003,-458.1646,-0.59847293)"
+       style="fill:#165016"
+       id="g6">
+      <g
+         style="fill:#165016"
+         id="g113">
+        <rect
+           x="0"
+           y="336"
+           style="fill:#165016"
+           width="512"
+           height="60.799999"
+           id="rect2" />
+        <rect
+           x="0"
+           y="142.933"
+           style="fill:#165016"
+           width="512"
+           height="60.799999"
+           id="rect4" />
+      </g>
+    </g>
+    <g
+       transform="matrix(0.75000003,0,0,0.75000003,-458.1646,-0.59847293)"
+       id="g12" />
+    <g
+       transform="matrix(0.75000003,0,0,0.75000003,-458.1646,-0.59847293)"
+       id="g18" />
+    <g
+       transform="matrix(0.75000003,0,0,0.75000003,-458.1646,-0.59847293)"
+       style="fill:#2ca02c"
+       id="g120">
+      <g
+         style="fill:#2ca02c"
+         id="g125">
+        <polygon
+           id="polygon8"
+           points="80,46.933 128,93.867 128,465.067 33.067,465.067 33.067,93.867 "
+           style="fill:#2ca02c" />
+        <polygon
+           id="polygon10"
+           points="256,46.933 302.933,93.867 302.933,465.067 209.067,465.067 209.067,93.867 "
+           style="fill:#2ca02c" />
+        <polygon
+           id="polygon20"
+           points="432,46.933 478.933,93.867 478.933,465.067 384,465.067 384,93.867 "
+           style="fill:#2ca02c" />
+      </g>
+    </g>
+    <g
+       transform="matrix(0.75000003,0,0,0.75000003,-458.1646,-0.59847293)"
+       style="fill:#165016"
+       id="g30">
+      <g
+         style="fill:#165016"
+         id="g109">
+        <circle
+           style="fill:#165016"
+           cx="256"
+           cy="366.93301"
+           r="12.8"
+           id="circle14" />
+        <circle
+           style="fill:#165016"
+           cx="80"
+           cy="366.93301"
+           r="12.8"
+           id="circle16" />
+        <circle
+           style="fill:#165016"
+           cx="432"
+           cy="173.867"
+           r="12.8"
+           id="circle22" />
+        <circle
+           style="fill:#165016"
+           cx="256"
+           cy="173.867"
+           r="12.8"
+           id="circle24" />
+        <circle
+           style="fill:#165016"
+           cx="80"
+           cy="173.867"
+           r="12.8"
+           id="circle26" />
+        <circle
+           style="fill:#165016"
+           cx="432"
+           cy="366.93301"
+           r="12.8"
+           id="circle28" />
+      </g>
+    </g>
+    <g
+       transform="matrix(0.75000003,0,0,0.75000003,-458.1646,-0.59847293)"
+       id="g32" />
+    <g
+       transform="matrix(0.75000003,0,0,0.75000003,-458.1646,-0.59847293)"
+       id="g34" />
+    <g
+       transform="matrix(0.75000003,0,0,0.75000003,-458.1646,-0.59847293)"
+       id="g36" />
+    <g
+       transform="matrix(0.75000003,0,0,0.75000003,-458.1646,-0.59847293)"
+       id="g38" />
+    <g
+       transform="matrix(0.75000003,0,0,0.75000003,-458.1646,-0.59847293)"
+       id="g40" />
+    <g
+       transform="matrix(0.75000003,0,0,0.75000003,-458.1646,-0.59847293)"
+       id="g42" />
+    <g
+       transform="matrix(0.75000003,0,0,0.75000003,-458.1646,-0.59847293)"
+       id="g44" />
+    <g
+       transform="matrix(0.75000003,0,0,0.75000003,-458.1646,-0.59847293)"
+       id="g46" />
+    <g
+       transform="matrix(0.75000003,0,0,0.75000003,-458.1646,-0.59847293)"
+       id="g48" />
+    <g
+       transform="matrix(0.75000003,0,0,0.75000003,-458.1646,-0.59847293)"
+       id="g50" />
+    <g
+       transform="matrix(0.75000003,0,0,0.75000003,-458.1646,-0.59847293)"
+       id="g52" />
+    <g
+       transform="matrix(0.75000003,0,0,0.75000003,-458.1646,-0.59847293)"
+       id="g54" />
+    <g
+       transform="matrix(0.75000003,0,0,0.75000003,-458.1646,-0.59847293)"
+       id="g56" />
+    <g
+       transform="matrix(0.75000003,0,0,0.75000003,-458.1646,-0.59847293)"
+       id="g58" />
+    <g
+       transform="matrix(0.75000003,0,0,0.75000003,-458.1646,-0.59847293)"
+       id="g60" />
+  </g>
+</svg>

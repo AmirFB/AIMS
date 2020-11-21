@@ -1,0 +1,126 @@
+﻿<interfaces:AIMSWindow
+    xmlns:interfaces="clr-namespace:AIMS3.FrontEnd.Interfaces"
+	xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+	x:Class="AIMS3.FrontEnd.Site.ReportWindow"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+	xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+	Title="Report" Height="350" Width="525"
+	Closing="Window_Closing">
+	
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		
+		<Grid Grid.Row="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+			
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+
+			<dxe:DateEdit Grid.Row="0" Grid.Column="0" Name="dateEditFrom" Width="200"
+						  Margin="3" Mask="D" MaskType="DateTimeAdvancingCaret">
+				<dxe:DateEdit.StyleSettings>
+					<dxe:DateEditNavigatorStyleSettings/>
+				</dxe:DateEdit.StyleSettings>
+			</dxe:DateEdit>
+
+			<TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Text="&#x27AA;" FontSize="21"/>
+			
+			<dxe:DateEdit Grid.Row="0" Grid.Column="2" Name="dateEditTo" Width="200"
+						  Margin="3" Mask="D" MaskType="DateTimeAdvancingCaret">
+				<dxe:DateEdit.StyleSettings>
+					<dxe:DateEditNavigatorStyleSettings/>
+				</dxe:DateEdit.StyleSettings>
+			</dxe:DateEdit>
+
+			<StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+				<dx:SimpleButton Content="{DynamicResource Show}"
+                                 Margin="3" Width="{DynamicResource ButtonWidth}"
+                                 Click="Show_Click"/>
+                
+                <dx:SimpleButton Content="{DynamicResource FromLocal}"
+                                 Margin="3" Width="{DynamicResource ButtonWidth}"
+                                 Click="ShowLocal_Click"
+                                 Visibility="{Binding RemoteVisibility}"/>
+
+                <dx:SimpleButton Content="{DynamicResource ExportToExcel}"
+                                 Margin="3" Width="Auto"
+                                 Click="Export_Click"/>
+			</StackPanel>
+		</Grid>
+		
+		<dxg:GridControl Name="gridControl" Grid.Row="1" VerticalAlignment="Stretch"
+						 ItemsSource="{Binding Logs, Mode=OneWay, UpdateSourceTrigger=Explicit}"
+                         Height="Auto" Width="Auto" Margin="3">
+			<dxg:GridControl.View>
+				<dxg:TableView Name="tableView" Height="Auto" Width="Auto" ShowGroupPanel="False"/>
+			</dxg:GridControl.View>
+						
+			<dxg:GridColumn FieldName="Date" Width="71"
+                            Header="{DynamicResource Date}" HorizontalHeaderContentAlignment="Center">
+				<dxg:GridColumn.EditSettings>
+					<dxe:TextEditSettings HorizontalContentAlignment="Center"/>
+				</dxg:GridColumn.EditSettings>
+			</dxg:GridColumn>
+			
+			<dxg:GridColumn FieldName="Time" Width="54"
+                            Header="{DynamicResource Time}" HorizontalHeaderContentAlignment="Center">
+				<dxg:GridColumn.EditSettings>
+					<dxe:TextEditSettings HorizontalContentAlignment="Center"/>
+				</dxg:GridColumn.EditSettings>
+			</dxg:GridColumn>
+			
+			<dxg:GridColumn FieldName="Status" Width="Auto"
+                            Header="{DynamicResource Status}" HorizontalHeaderContentAlignment="Center">
+				<dxg:GridColumn.EditSettings>
+					<dxe:TextEditSettings HorizontalContentAlignment="Center"/>
+				</dxg:GridColumn.EditSettings>
+			</dxg:GridColumn>
+			
+			<dxg:GridColumn FieldName="Description" Width="Auto"
+                            Header="{DynamicResource Description}" HorizontalHeaderContentAlignment="Center">
+				<dxg:GridColumn.EditSettings>
+					<dxe:TextEditSettings HorizontalContentAlignment="Center"/>
+				</dxg:GridColumn.EditSettings>
+			</dxg:GridColumn>
+			
+			<dxg:GridColumn FieldName="Module" Width="Auto"
+                            Header="{DynamicResource Module}" HorizontalHeaderContentAlignment="Center">
+				<dxg:GridColumn.EditSettings>
+					<dxe:TextEditSettings HorizontalContentAlignment="Center"/>
+				</dxg:GridColumn.EditSettings>
+			</dxg:GridColumn>
+
+			<dxg:GridColumn FieldName="Name" Width="Auto"
+                            Header="{DynamicResource Name}" HorizontalHeaderContentAlignment="Center">
+				<dxg:GridColumn.EditSettings>
+					<dxe:TextEditSettings HorizontalContentAlignment="Center"/>
+				</dxg:GridColumn.EditSettings>
+			</dxg:GridColumn>
+
+			<dxg:GridColumn FieldName="Reason" Width="Auto"
+                            Header="{DynamicResource Reason}" HorizontalHeaderContentAlignment="Center">
+				<dxg:GridColumn.EditSettings>
+					<dxe:TextEditSettings HorizontalContentAlignment="Center"/>
+				</dxg:GridColumn.EditSettings>
+			</dxg:GridColumn>
+			
+			<dxg:GridColumn FieldName="User" Width="Auto"
+                            Header="{DynamicResource User}" HorizontalHeaderContentAlignment="Center">
+				<dxg:GridColumn.EditSettings>
+					<dxe:TextEditSettings HorizontalContentAlignment="Center"/>
+				</dxg:GridColumn.EditSettings>
+			</dxg:GridColumn>
+		</dxg:GridControl>
+	</Grid>
+</interfaces:AIMSWindow>

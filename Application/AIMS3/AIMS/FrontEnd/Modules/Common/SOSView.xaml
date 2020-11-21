@@ -1,0 +1,77 @@
+﻿<interfaces:ZoneView
+	xmlns:interfaces="clr-namespace:AIMS3.FrontEnd.Modules.Interfaces"
+	x:Class="AIMS3.FrontEnd.Modules.Common.SOSView"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+	xmlns:Common="clr-namespace:AIMS3.FrontEnd.Modules.Common"
+	mc:Ignorable="d"
+             Height="Auto" Width="Auto" MinHeight="100">
+
+	<interfaces:ZoneView.BindingGroup>
+		<BindingGroup Name="BindingGroup"/>
+	</interfaces:ZoneView.BindingGroup>
+
+	<Grid Width="Auto" Height="Auto">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="Auto"/>
+		</Grid.ColumnDefinitions>
+
+		<Grid Grid.Column="0" Width="Auto" Height="Auto">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+
+			<TextBlock Grid.Row="0" Name="textBlockName" Grid.ColumnSpan="2"
+						  Text="SOS"
+						  Margin="3" FontSize="16" FontWeight="UltraBold"/>
+
+			<dxe:CheckEdit Grid.Row="1" Grid.Column="0" Name="toggleSwitchEneabled"
+						   Content="{DynamicResource Enabled}" Margin="3"
+						   IsChecked="True" IsEnabled="False"/>
+
+			<dxe:CheckEdit Grid.Row="2" Grid.Column="0" Name="checkEditAutomaticReset"
+                           Content="{DynamicResource AutomaticReset}" Margin="3"
+                           IsChecked="{Binding AutomaticReset, BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+
+			<dxe:CheckEdit Grid.Row="3" Grid.Column="0" Name="checkEditTamper"
+                           Content="{DynamicResource Tamper}" Margin="3"
+                           IsChecked="{Binding Tamper, BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+
+			<Border Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="1" Grid.RowSpan="4"
+					BorderThickness="1" BorderBrush="White"/>
+
+			<Border Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="4"
+					BorderThickness="1" BorderBrush="White"/>
+
+			<Border Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="1" Grid.RowSpan="4"
+					BorderThickness="1" BorderBrush="White"/>
+		</Grid>
+
+		<Common:RelayAssign x:Name="relayAssign" Grid.Column="1"
+							HorizontalAlignment="Right"
+							Width="Auto" Height="137" VerticalAlignment="Stretch" Margin="1"/>
+
+		<Common:CameraAssign x:Name="cameraAssign" Grid.Column="2"
+							 Width="Auto" Height="137" VerticalAlignment="Stretch" Margin="1"/>
+
+		<Border Grid.Column="0" BorderThickness="1" BorderBrush="White"/>
+		<Border Grid.Column="1" BorderThickness="1" BorderBrush="White"/>
+		<Border Grid.Column="2" BorderThickness="1" BorderBrush="White"/>
+	</Grid>
+</interfaces:ZoneView>

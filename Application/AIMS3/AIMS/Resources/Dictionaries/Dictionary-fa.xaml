@@ -1,0 +1,304 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+	
+	<!--Allignment-->
+	<HorizontalAlignment x:Key="HorizontalAlignment">Right</HorizontalAlignment>
+	<HorizontalAlignment x:Key="InverseHorizontalAlignment">Left</HorizontalAlignment>
+	
+    <!--General-->
+    <system:String x:Key="Cancel">انصراف</system:String>
+    <system:String x:Key="Select">انتخاب</system:String>
+    <system:String x:Key="Save">ذخیره</system:String>
+    <system:String x:Key="Default">پیش فرض</system:String>
+	<system:String x:Key="New">جدید</system:String>
+	<system:String x:Key="Delete">حذف</system:String>
+	<system:String x:Key="Name">نام</system:String>
+	<system:String x:Key="Language">زبان</system:String>
+	<system:String x:Key="OK">تایید</system:String>
+	<system:String x:Key="Apply">اعمال</system:String>
+	<system:String x:Key="Check">بررسی</system:String>
+	<system:String x:Key="Logout">خروج کاربر</system:String>
+	<system:String x:Key="Exit">خروج</system:String>
+	<system:String x:Key="Console">کنسول</system:String>
+	<system:String x:Key="Error">خطا</system:String>
+    <system:String x:Key="Success">موفقیت</system:String>
+    <system:String x:Key="RemoveAll">حذف همه</system:String>
+	
+    <!--Settings-->
+	<system:String x:Key="Serial">سریال</system:String>
+	<system:String x:Key="Timeout">تایم اوت</system:String>
+	<system:String x:Key="TimeoutBias">بایاس تایم اوت</system:String>
+	<system:String x:Key="DelayBias">بایاس تاخیر</system:String>
+	<system:String x:Key="ConnectionSettings">تنظیمات اتصال</system:String>
+	<system:String x:Key="ErrorRepeat">تکرار خطا</system:String>
+	<system:String x:Key="General">عمومی</system:String>
+	
+	<!--SiteSettingsWindow-->
+	<system:String x:Key="_New">_جدید</system:String>
+	<system:String x:Key="_NewLocal">سایت _محلی جدید</system:String>
+	<system:String x:Key="_NewRemote">سایت _ریموت جدید</system:String>
+	<system:String x:Key="NewLocalDesc">ایجاد یک سایت محلی</system:String>
+    <system:String x:Key="NewRemoteDesc">ایجاد  یک سایت ریموت</system:String>
+    <system:String x:Key="UsersDesc">باز کردن تنظیمات کاربر ها</system:String>
+    <system:String x:Key="LogoutDesc">خروج کاربر فعلی</system:String>
+    <system:String x:Key="ExitDesc">خروج از نرم افزار</system:String>
+    <system:String x:Key="ApplicationSettingsDesc">تغییر تنظیمات نرم افزار</system:String>
+    <system:String x:Key="_Logout">خرو_ج کاربر</system:String>
+	<system:String x:Key="System">سیستم</system:String>
+	<system:String x:Key="NameExists">این نام قبلا ساتفاده شده است.</system:String>
+	<system:String x:Key="InternalNetwork">شبکه داخلی</system:String>
+	<system:String x:Key="InternetAccess">اینترنت</system:String>
+	
+	<!--Login-->
+    <system:String x:Key="Username">نام کاربری</system:String>
+    <system:String x:Key="Password">رمز عبور</system:String>
+	<system:String x:Key="Login">ورود</system:String>
+	<system:String x:Key="NullUsername">نام کاربری را وارد کنید</system:String>
+	<system:String x:Key="NullPassword">رمز عبور را وارد کنید</system:String>
+	
+	<!--Users-->
+	<system:String x:Key="Users">کاربر ها</system:String>
+	<system:String x:Key="Authority">اختیار</system:String>
+	<system:String x:Key="Modify">تغییر</system:String>
+	<system:String x:Key="NewPassword">رمز عبور جدید</system:String>
+	<system:String x:Key="OldPassword">رمز عبور قدیمی</system:String>
+	<system:String x:Key="ConfirmPassword">تکرار رمز عبور</system:String>
+	<system:String x:Key="NullNewPassword">رمز عبور جدید را وارد کنید</system:String>
+	<system:String x:Key="NullOldPassword">رمز عبور قدیمی را وارد کنید</system:String>
+	<system:String x:Key="NullConfirmPassword">تکرار رمز عبور را وارد کنید</system:String>
+	<system:String x:Key="PasswordsMatch">رمز عبور و تکرار آن یکسان هستند.</system:String>
+	<system:String x:Key="PasswordsNotMatch">رمز عبور و تکرار آن یکسان نیستند.</system:String>
+	
+	<!--Modules-->
+    <system:String x:Key="Alarm">آژیر</system:String>
+    <system:String x:Key="Module">ماژول</system:String>
+    <system:String x:Key="Camera">دوربین</system:String>
+    <system:String x:Key="Cam">دوربین</system:String>
+    <system:String x:Key="Preset">پریست</system:String>
+    <system:String x:Key="Sound">صدا</system:String>
+	<system:String x:Key="AutomaticReset">ریست خودکار</system:String>
+	<system:String x:Key="Tamper">تمپر</system:String>
+	<system:String x:Key="Zone">زون</system:String>
+	<system:String x:Key="Zone1">زون اول</system:String>
+	<system:String x:Key="Zone2">زون دوم</system:String>
+	<system:String x:Key="Connection">اتصال</system:String>
+	<system:String x:Key="Address">آدرس</system:String>
+	<system:String x:Key="IP">آی پی</system:String>
+	<system:String x:Key="Port">پورت</system:String>
+	<system:String x:Key="Enabled">فعال</system:String>
+	<system:String x:Key="Encryption">کدگذاری</system:String>
+	<system:String x:Key="Encrypted">کد شده</system:String>
+	<system:String x:Key="Raw">خام</system:String>
+	<system:String x:Key="Connected">متصل شد</system:String>
+	<system:String x:Key="NotConnected">پیدا نشد</system:String>
+	<system:String x:Key="Set">روشن</system:String>
+	<system:String x:Key="Reset">خاموش</system:String>
+	<system:String x:Key="Fault">خطا</system:String>
+	<system:String x:Key="Relay">رله</system:String>
+	
+	<!--Modules.EF-->
+    <system:String x:Key="Power">توان</system:String>
+    <system:String x:Key="Threshold">آستانه</system:String>
+	<system:String x:Key="Repeat">تکرار</system:String>
+	<system:String x:Key="Type">نوع</system:String>
+	
+	<!--Modules.FG-->
+	<system:String x:Key="Sensitivity">حساسیت</system:String>
+	<system:String x:Key="Pulses">پالس</system:String>
+	<system:String x:Key="TimeWindow">پنجره زمانی</system:String>
+	<system:String x:Key="Pretime">زمان تفکیک</system:String>
+	
+	<!--Modules.Cam-->
+	<system:String x:Key="Home">خانه</system:String>
+	<system:String x:Key="GoHome">برو خانه</system:String>
+	<system:String x:Key="SetHome">تنظیم خانه</system:String>
+	<system:String x:Key="GoPreset">برو به</system:String>
+	<system:String x:Key="Cache">کش</system:String>
+	<system:String x:Key="Index">شماره</system:String>
+	<system:String x:Key="Play">پخش</system:String>
+    <system:String x:Key="Stop">توقف</system:String>
+	<system:String x:Key="Profile">پروفایل</system:String>
+	<system:String x:Key="Brand">برند</system:String>
+
+	<!--MainWindow-->
+	<system:String x:Key="_Language">_زبان</system:String>
+    <system:String x:Key="_English">_انگلیسی</system:String>
+    <system:String x:Key="English">انگلیسی</system:String>
+    <system:String x:Key="_Farsi">_فارسی</system:String>
+    <system:String x:Key="Farsi">_فارس</system:String>
+	<system:String x:Key="Plant">Plant</system:String>
+	<system:String x:Key="Map">نقشه</system:String>
+	<system:String x:Key="Utility">کاربردی</system:String>
+	<system:String x:Key="Report">گزارش</system:String>
+	<system:String x:Key="Modules">ماژول ها</system:String>
+	<system:String x:Key="Upload">بارگذاری</system:String>
+	<system:String x:Key="Place">جایگذاری</system:String>
+	<system:String x:Key="InitializeAnalyzers">راه اندازی اولیه آنالایزر ها</system:String>
+	<system:String x:Key="InitializeCameras">راه اندازی اولیه دوربین ها</system:String>
+	<system:String x:Key="Freeze">توقف اتصال</system:String>
+	<system:String x:Key="ResetAlarms">قطع آژیر ها</system:String>
+	<system:String x:Key="SetAlarms">فعالسازی آژیر ها</system:String>
+	<system:String x:Key="ResetFaults">ریست همه خطاها</system:String>
+	<system:String x:Key="AcknowledgeFaults">تصدیق همه خطاها</system:String>
+    <system:String x:Key="MoveIcons">جابجایی آیکون ها</system:String>
+    <system:String x:Key="Menu">منو</system:String>
+
+    <!--HomeMenu-->
+	<system:String x:Key="_File">_فایل</system:String>
+	<system:String x:Key="_Console">_کنسول</system:String>
+	<system:String x:Key="_Users">کار_بر ها</system:String>
+	<system:String x:Key="_Report">_گزارش</system:String>
+	<system:String x:Key="_Exit">_خروج</system:String>
+
+	<system:String x:Key="_View">_نمایش</system:String>
+	<system:String x:Key="_ShowStatistics">_آمار و مشخصات</system:String>
+	<system:String x:Key="_ShowTemperature">_دما</system:String>
+
+	<system:String x:Key="_Tools">_ابزار ها</system:String>
+	<system:String x:Key="_Settings">_تنظیمات</system:String>
+	<system:String x:Key="_Modules">_ماژول ها</system:String>
+	<system:String x:Key="Sea_rch">_جستجو</system:String>
+	
+	<system:String x:Key="_Map">_نقشه</system:String>
+	<system:String x:Key="_Toolbar">_نوار ابزار</system:String>
+	<system:String x:Key="_Upload">_بارگذاری</system:String>
+	
+	<!--Map-->
+    <system:String x:Key="ClearAll">پاک سازی همه</system:String>
+	<system:String x:Key="Mute">سکوت</system:String>
+	<system:String x:Key="ShowStatistics">آمار و مشخصات</system:String>
+	<system:String x:Key="ShowTemperature">دما</system:String>
+
+	<!--Map.ContextMenu-->
+    <system:String x:Key="Test">تست</system:String>
+    <system:String x:Key="Settings">تنظیمات</system:String>
+    <system:String x:Key="Remove">حذف</system:String>
+	<system:String x:Key="Status">وضعیت</system:String>
+	
+	<!--Log-->
+	<system:String x:Key="Date">تاریخ</system:String>
+	<system:String x:Key="Time">ساعت</system:String>
+	<system:String x:Key="Description">توصیف</system:String>
+	<system:String x:Key="Reason">دلیل</system:String>
+	<system:String x:Key="User">کاربر</system:String>
+	<system:String x:Key="Show">نشان بده</system:String>
+    <system:String x:Key="ExportToExcel">استخراج به اکسل</system:String>
+    <system:String x:Key="FromLocal">از سایت محلی</system:String>
+
+    <!--Messages.Main-->
+	<system:String x:Key="AskLogout">آیا مطمئنید می خواهید از این کاربر خارخ شوید؟</system:String>
+	<system:String x:Key="AskExit">آیا مطمئن هستید که می خواهد برنامه برا ببندید؟</system:String>
+	<system:String x:Key="LoadingDevicesFailed">مشکلی در بازگذاری ماژول ها از پایگاه داده به وجود آمده است.</system:String>
+	<system:String x:Key="OutOf">از</system:String>
+	<system:String x:Key="Failed">با مشکل مواجه شده است</system:String>
+	<system:String x:Key="LockNotFound">قفل سخت افزاری پیدا نشد. لطفا قفل را وصل کرده و دوباره نرم افزار را اجرا نمایید.</system:String>
+	<system:String x:Key="AlreadyRunning">نمونه دیگری از AIMS در حال اجرا است.</system:String>
+	
+	<!--Messages.Modules-->
+	<system:String x:Key="Initialized">با موفقیت راه اندازی شد.</system:String>
+	<system:String x:Key="NotInitialized">راه اندازی با شکست مواجه شد.</system:String>
+	<system:String x:Key="Result">نتیجه</system:String>
+    <system:String x:Key="AskIfDeleteModule">آیا مطمئن هستید که می خواهید این ماژول را حذف کنید؟</system:String>
+    <system:String x:Key="SaveFailure">خطای ذخیره سازی</system:String>
+    <system:String x:Key="IndexExists">این شماره قبلا ثبت شده است.</system:String>
+    <system:String x:Key="AddressExists">این آدرس قبلا ثبت شده است.</system:String>
+    <system:String x:Key="EndPointExists">این آی پی، پورت و آدرس قبلا ثبت شده است.</system:String>
+	<system:String x:Key="IPExists">این آی پی قبلا ثبت شده است.</system:String>
+	<system:String x:Key="IPPortExists">این آی پی و پورت قبلا ثبت شده است.</system:String>
+	<system:String x:Key="PortExists">این پورت قبلا ثبت شده است.</system:String>
+
+	<!--Messages.Login-->
+	<system:String x:Key="UserPassWrong">نام کاربری یا رمز عبور وارد شده صحیح نیست.</system:String>
+	
+	<!--Messages.Users-->
+	<system:String x:Key="UsernameEmpty">لطفا نام کاربری را وارد کنید.</system:String>
+	<system:String x:Key="PasswordsAndConfirmEmpty">لطفا رمز عبور و تکرار آن را وارد نمایید.</system:String>
+	<system:String x:Key="UserNotFound">کاربر پیدا نشد.</system:String>
+	<system:String x:Key="UserExists">این نام کاربری قبلا ثبت شده است.</system:String>
+	<system:String x:Key="NotAuthorized">شما اجازه این کار را ندارید.</system:String>
+	<system:String x:Key="AskDelete">آیا مطمئن هستید که می خواهید این کاربر برا حذف کنید؟</system:String>
+	<system:String x:Key="NotYourself">نمی توانید کاربر فعلی را حذف کنید.</system:String>
+	
+	<!--Messages.Map-->
+    <system:String x:Key="AskClearAllIcons">آیا می خواهید تمامی آیکون های موجود بر روی نقشه یا پاک کنید؟</system:String>
+    <system:String x:Key="AskTurnZoneOn">آیا می خواهید این زون را روشن کنید؟</system:String>
+    <system:String x:Key="AskTurnZoneOff">ایا می خواهید این زون را خاموش کنید؟</system:String>
+	
+    <!--Messages.Faults-->
+	<system:String x:Key="NotObviated">عامل خطا رفع نشده است.</system:String>
+	
+	<!--Messages.DataBAse-->
+	<system:String x:Key="DataBaseSaveFailed">مشکلی هنگام ذخیره سازی پایگاه داده به وجود آمد.</system:String>
+	<system:String x:Key="DataBaseFailed">مشکل پایگاه داده</system:String>
+	<system:String x:Key="SiteConfigSaveFailed">مشکلی هنگام ذخیره سازی تنظیمات سایت به وجود آمد.</system:String>
+	<system:String x:Key="SiteConfigLoadFailed">مشکلی هنگام بار گذاری تنظیمات سایت به وجود آمد.</system:String>
+	<system:String x:Key="ConfigSaveFailed">مشکلی هنگام ذخیره سازی تنظیمات به وجود آمد.</system:String>
+	
+	<!--ElectroFence-->
+	<system:String x:Key="Healthy">سالم</system:String>
+	<system:String x:Key="Faulty">خطا</system:String>
+	<system:String x:Key="Disonnected">قطع</system:String>
+	<system:String x:Key="Connectedy">متصل</system:String>
+	<system:String x:Key="Charging">در حال شارژ</system:String>
+	<system:String x:Key="NotCharging">شارژ نمی شود</system:String>
+	
+	<!--Faults-->
+	<system:String x:Key="ResetFault">بازیابی</system:String>
+	<system:String x:Key="Acknowledge">تصدیق</system:String>
+	
+	<!--Telemetric-->
+	<system:String x:Key="LocalSiteSuccess">سایت محلی تایید کرده و تنظیمات اعمال شد.</system:String>
+	<system:String x:Key="LocalSiteNotConnected">ارتباط با سایت محلی قطع می باشد.</system:String>
+	<system:String x:Key="LocalSiteNotAuthorized">اطلاعات توسط سایت محلی تایید نشد.</system:String>
+	<system:String x:Key="SettingsChanged">تنظیمات تغییر یافت.</system:String>
+	<system:String x:Key="AllReceived">تنظیمات و ماژول ها دریافت شدند.</system:String>
+	<system:String x:Key="ModuleModified">مازول تغییر یافت.</system:String>
+	<system:String x:Key="ModuleAdded">مازول اضافه شد.</system:String>
+	<system:String x:Key="ModuleDeleted">ماژول حذف شد.</system:String>
+	<system:String x:Key="ModuleChecked">ماژول چک شد.</system:String>
+	<system:String x:Key="ConnectedToLocal">به سایت محلی متصل گردید.</system:String>
+	<system:String x:Key="ConnectedToRemote">به سایت ریموت متصل گردید.</system:String>
+	<system:String x:Key="DisconnectedFromLocal">ارتباط با سایت محلی قطع شد.</system:String>
+	<system:String x:Key="DisconnectedFromRemote">ارتباط با سایت ریموت قطع شد.</system:String>
+	<system:String x:Key="FaultAcknowledged">خطا تصدیق شد.</system:String>
+	<system:String x:Key="FaultReseted">خطا ریست شد.</system:String>
+	<system:String x:Key="FaultRaised">خطا تست شد.</system:String>
+	<system:String x:Key="RelaySet">رله ست شد.</system:String>
+	<system:String x:Key="RelayReset">رله ریست شد.</system:String>
+	<system:String x:Key="AllIconsRemoved">تمامی آیکون ها حذف شدند.</system:String>
+	<system:String x:Key="AllFaultsAcknowledged">تمامی خطاها تصدیق شدند.</system:String>
+	<system:String x:Key="AllFaultsReseted">تمامی خطا ها ریست شدند.</system:String>
+	<system:String x:Key="AllAnalyzersInitilaized">تمامی آنالایزر ها ریست می شوند.</system:String>
+	<system:String x:Key="AllCamerasInitilaized">تمام دوربین ها ریست می شوند.</system:String>
+	<system:String x:Key="AllAlarmsSet">تمامی رله ها تحریک شدند.</system:String>
+	<system:String x:Key="AllAlarmsReset">تمامی رله ها ریست شدند.</system:String>
+	
+	<!--SiteModulesStatus-->
+	<system:String x:Key="ModulesStatus">وضعیت ماژول ها</system:String>
+	<system:String x:Key="ModuleType">نوع ماژول</system:String>
+    <system:String x:Key="ElectroFence">فنس الکتریکی</system:String>
+    <system:String x:Key="EF">فنس الکتریکی</system:String>
+    <system:String x:Key="FlexiGuard">فلکسی گارد</system:String>
+    <system:String x:Key="FG">فلکسی گارد</system:String>
+    <system:String x:Key="AlarmControlUnit">واحد کنترل آژیر</system:String>
+    <system:String x:Key="ACU">واحد کنترل آژیر</system:String>
+    <system:String x:Key="CountConnected">تعداد/متصل</system:String>
+	<system:String x:Key="ConnectionType">نوع ارتباط</system:String>
+	<system:String x:Key="NoFaults">بدون خطا</system:String>
+	<system:String x:Key="Refresh">رفرش</system:String>
+	
+	<!--SiteDetails-->
+	<system:String x:Key="Access">دسترسی</system:String>
+	<system:String x:Key="Local">محلی</system:String>
+	<system:String x:Key="Remote">ریموت</system:String>
+	<system:String x:Key="LocalConnections">اتصالات محلی</system:String>
+    <system:String x:Key="TelemetricConnections">اتصالات تله متری</system:String>
+
+    <!--ApplicationSettingsWindow-->
+    <system:String x:Key="ApplicationSettings">تنظیمات نرم افزار</system:String>
+
+    <!--SiteListWindow-->
+    <system:String x:Key="Sites">سایت ها</system:String>
+    <system:String x:Key="AskIfDeleteSite">آیا می خواهید این سایت را حذف کنید؟</system:String>
+</ResourceDictionary>

@@ -1,0 +1,33 @@
+﻿<interfaces:ModuleView
+	xmlns:interfaces="clr-namespace:AIMS3.FrontEnd.Modules.Interfaces"
+	x:Class="AIMS3.FrontEnd.Modules.ACU.ACUView"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:Common="clr-namespace:AIMS3.FrontEnd.Modules.Common"
+	xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+	mc:Ignorable="d"
+	Height="Auto" Width="Auto"
+	Margin="{DynamicResource ModuleListMargin}">
+	
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+		<Common:ModuleBasicView Grid.Row="0" x:Name="basicView" Type="ACU"/>
+		<Common:SOSView Grid.Row="1" x:Name="sos" Height="Auto" Width="Auto"/>
+		<Common:RelaysView Grid.Row="2" x:Name="relaysView"/>
+
+		<Common:ModuleButtonView Grid.Row="3" x:Name="buttonView"/>
+
+		<Border Grid.Row="0" BorderThickness="1" BorderBrush="White" Grid.ColumnSpan="2"/>
+		<Border Grid.Row="1" BorderThickness="1" BorderBrush="White" Grid.ColumnSpan="2"/>
+		<Border Grid.Row="2" BorderThickness="1" BorderBrush="White" Grid.ColumnSpan="2"/>
+		<Border Grid.Row="3" BorderThickness="1" BorderBrush="White" Grid.ColumnSpan="2"/>
+	</Grid>
+</interfaces:ModuleView>

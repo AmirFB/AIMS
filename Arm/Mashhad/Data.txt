@@ -1,0 +1,13 @@
+Serial Number: IHPciRalRUMmJ001
+Special ID: 6011-9609-6030
+Manager: adJklRZBgGnqvwW2
+AES: ajwfiU49M7puCY4L
+Developer: adkMMOQtu4cfFklo
+Read Key: F97818D28C523A7DBC283C4E255B3A6D
+Write Key: 298757311DC8BEFC771B30EF26B3C83B
+Equation: 254-503+35-55
+Query: 12-3-8-0-7,13
+Encode: 25, 10, 18, 47, 13, 4, 8, 26, 55, 73
+Expert: The Savior,AFB,Expert
+The Savior,AFB,Expert;EHP,4132112,Expert;
+72,145,131,3,31,65,63,127,1,96,232,99,255,122,65,38

@@ -1,0 +1,75 @@
+﻿<dx:ThemedWindow
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+    x:Class="AIMS3.FrontEnd.Basic.ApplicationSettingsWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    Title="{DynamicResource ApplicationSettings}"
+    SizeToContent="WidthAndHeight"
+    MinWidth="150"
+    MinHeight="100">
+    
+    <dx:ThemedWindow.BindingGroup>
+        <BindingGroup x:Name="BindingGroup"/>
+    </dx:ThemedWindow.BindingGroup>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <Grid VerticalAlignment="Top" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock Grid.Column="0" Margin="3"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Text="{DynamicResource Language}"/>
+            
+            <dxe:ComboBoxEdit Grid.Column="1"
+                              Name="comboBoxEditLanguages"
+                              HorizontalAlignment="Left"
+                              VerticalAlignment="Top"
+                              Width="80" Margin="3"
+                              SelectedIndex="{Binding SelectedLanguageIndex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                <dxe:ComboBoxEdit.Items>
+                    <dxe:ComboBoxEditItem Content="English"/>
+                    <dxe:ComboBoxEditItem Content="فارسی"/>
+                </dxe:ComboBoxEdit.Items>
+            </dxe:ComboBoxEdit>
+        </Grid>
+        
+        <StackPanel Grid.Row="2" Orientation="Horizontal"
+                    HorizontalAlignment="{DynamicResource InverseHorizontalAlignment}">
+        
+            <dx:SimpleButton Margin="3"
+                             Width="{DynamicResource ButtonWidth}"
+                             Height="{DynamicResource ButtonHeight}"
+                             Content="{DynamicResource OK}"
+                             Click="OK_Click"/>
+            
+            <dx:SimpleButton Margin="3"
+                             Width="{DynamicResource ButtonWidth}"
+                             Height="{DynamicResource ButtonHeight}"
+                             Content="{DynamicResource Apply}"
+                             Click="Apply_Click"/>
+            
+            <dx:SimpleButton Margin="3"
+                             Width="{DynamicResource ButtonWidth}"
+                             Height="{DynamicResource ButtonHeight}"
+                             Content="{DynamicResource Default}"
+                             Click="Default_Click"/>
+            
+            <dx:SimpleButton Margin="3"
+                             Width="{DynamicResource ButtonWidth}"
+                             Height="{DynamicResource ButtonHeight}"
+                             Content="{DynamicResource Cancel}"
+                             IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+</dx:ThemedWindow>

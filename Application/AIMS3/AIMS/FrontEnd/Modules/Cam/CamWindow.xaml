@@ -1,0 +1,22 @@
+﻿<interfaces:AIMSWindow
+				 xmlns:interfaces="clr-namespace:AIMS3.FrontEnd.Interfaces"
+				 xmlns:Cam="clr-namespace:AIMS3.FrontEnd.Modules.Cam"
+                 x:Class="AIMS3.FrontEnd.Modules.Cam.CamWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                 Closing="Window_Closing" Topmost="False"
+                 Width="160" Height="90"
+                 MinWidth="{Binding WidthSize, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                 MinHeight="{Binding HeightSize, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                 Left="{Binding LeftPosition, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                 Top="{Binding TopPosition, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                 Title="{Binding CamName, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                 WindowStartupLocation="Manual">
+
+	<Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+		<Cam:Player x:Name="player"
+					HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"/>
+	</Grid>
+</interfaces:AIMSWindow>

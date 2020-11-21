@@ -1,0 +1,157 @@
+﻿<interfaces:ModuleView
+    xmlns:interfaces="clr-namespace:AIMS3.FrontEnd.Modules.Interfaces"
+    xmlns:Cam="clr-namespace:AIMS3.FrontEnd.Modules.Cam"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    x:Class="AIMS3.FrontEnd.Modules.Cam.CamView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:common="clr-namespace:AIMS3.FrontEnd.Modules.Common"
+	mc:Ignorable="d"
+    Height="Auto" Width="Auto"
+    Margin="{DynamicResource ModuleListMargin}">
+	
+	<interfaces:ModuleView.BindingGroup>
+		<BindingGroup Name="BindingGroup"/>
+	</interfaces:ModuleView.BindingGroup>
+	
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		
+		<common:ModuleBasicView Grid.Row="0" x:Name="basicView" Type="Cam"/>
+		
+		<Grid Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+			
+            <Grid Grid.Row="0" Margin="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+					<RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+				
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <dx:SimpleButton Grid.Row="0" Grid.Column="1"
+                                 Content="{DynamicResource GoHome}"
+                                 Margin="3"
+                                 Width="{DynamicResource ButtonWidth}"
+                                 Height="{DynamicResource ButtonHeight}"
+                                 Click="Home_Click"/>
+
+                <dx:SimpleButton Grid.Row="0" Grid.Column="2"
+                                 Content="{DynamicResource GoPreset}"
+                                 Margin="3"
+                                 Width="{DynamicResource ButtonWidth}"
+                                 Height="{DynamicResource ButtonHeight}"
+                                 Click="Preset_Click"/>
+                
+                <dxe:ComboBoxEdit Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                                  Height="Auto" VerticalAlignment="Top"
+                                  Margin="3" Name="listBoxEditPresets"
+                                  HorizontalAlignment="Stretch"
+                                  DisplayMember="name"
+                                  ItemsSource="{Binding Presets,
+                    Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+				<GroupBox Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
+                          Height="Auto" VerticalAlignment="Top"
+                          Header="RTSP" Margin="5 0 5 3">
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+						</Grid.RowDefinitions>
+						
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+						<TextBlock Grid.Row="0" Grid.Column="0" Text="{DynamicResource Port}"
+							   Margin="3" VerticalAlignment="Center"/>
+						
+						<dxe:TextEdit Grid.Row="0" Grid.Column="1" Margin="3" Width="50"
+									  VerticalAlignment="Center" HorizontalAlignment="Left"
+                                      Name="TextBlockRtspPort"
+									  EditValueType="{x:Type sys:Int32}"
+									  EditValue="{Binding RtspPort,
+							BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+									  MaskType="Numeric"/>
+
+						<TextBlock Grid.Row="1" Grid.Column="0" Text="{DynamicResource Cache}"
+							   Margin="3" VerticalAlignment="Center"/>
+						
+						<dxe:SpinEdit Grid.Row="1" Grid.Column="1" Margin="3" Width="50" Name="spinEditCache"
+									  VerticalAlignment="Center" HorizontalAlignment="Left"
+                                      Increment="10" MinValue="0" MaxHeight="1000"
+									  EditValueType="{x:Type sys:Int32}"
+									  EditValue="{Binding Cache,
+							BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+						
+						<RadioButton Grid.Row="2" Grid.Column="0" Margin="3" VerticalAlignment="Center"
+									 Content="TCP" Name="radioButtonTCP"
+									 IsChecked="{Binding RtspIsTCP,
+							BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+						
+						<RadioButton Grid.Row="2" Grid.Column="1" Margin="3" VerticalAlignment="Center"
+									 Content="UDP" Name="radioButtonUDP"
+									 IsChecked="{Binding RtspIsUDP,
+							BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+						
+                        <TextBlock Grid.Row="3" Grid.Column="0" Text="{DynamicResource Profile}"
+							   Margin="3" VerticalAlignment="Center"/>
+                        
+                        <dxe:ComboBoxEdit Name="comboBoxEditProfiles" Grid.Row="3" Grid.Column="1"
+                                          Grid.ColumnSpan="2" Margin="3" Width="120"
+                                          ItemsSource="{Binding Profiles,
+							Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                                          SelectedIndex="{Binding ProfileIndex,
+							BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+										  DisplayMember="name"/>
+						
+						<TextBlock Grid.Row="4" Grid.Column="0" Text="{DynamicResource Brand}"
+							   Margin="3" VerticalAlignment="Center"/>
+						
+						<dxe:ComboBoxEdit Name="comboBoxEditBrands" Grid.Row="4" Grid.Column="1"
+                                          Grid.ColumnSpan="2" Margin="3" Width="120"
+                                          ItemsSource="{Binding Brands,
+							BindingGroupName=BindingGroup, Mode=OneWay, UpdateSourceTrigger=Explicit}"
+                                          SelectedItem="{Binding Brand,
+							BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+										  DisplayMember="Name"/>
+					</Grid>
+				</GroupBox>
+			</Grid>
+			
+			<Cam:Player Grid.Row="1" x:Name="player"
+                        Margin="3" Width="524.5" Height="295"/>
+		</Grid>
+
+		<common:ModuleButtonView Grid.Row="4" x:Name="buttonView"/>
+
+		<Border Grid.Row="0" BorderThickness="1" BorderBrush="White" Grid.ColumnSpan="2"/>
+		<Border Grid.Row="1" BorderThickness="1" BorderBrush="White" Grid.ColumnSpan="2"/>
+		<Border Grid.Row="2" BorderThickness="1" BorderBrush="White" Grid.ColumnSpan="2"/>
+		<Border Grid.Row="3" BorderThickness="1" BorderBrush="White" Grid.ColumnSpan="2"/>
+		<Border Grid.Row="4" BorderThickness="1" BorderBrush="White" Grid.ColumnSpan="2"/>
+	</Grid>
+</interfaces:ModuleView>

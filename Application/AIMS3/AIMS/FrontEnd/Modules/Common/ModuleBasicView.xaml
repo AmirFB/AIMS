@@ -1,0 +1,189 @@
+﻿<interfaces:AIMSUserControl
+	xmlns:interfaces="clr-namespace:AIMS3.FrontEnd.Interfaces"
+	x:Class="AIMS3.FrontEnd.Modules.Common.ModuleBasicView"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+	xmlns:sys="clr-namespace:System;assembly=mscorlib"
+	mc:Ignorable="d">
+
+	<interfaces:AIMSUserControl.BindingGroup>
+		<BindingGroup Name="BindingGroup"/>
+	</interfaces:AIMSUserControl.BindingGroup>
+    
+    <Grid Grid.Row="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock Name="textBlockName" Grid.Row="0" Grid.Column="0" Margin="3" FontSize="16" FontWeight="UltraBold" Grid.ColumnSpan="2"
+				   Text="{Binding
+			RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type interfaces:AIMSUserControl}, AncestorLevel=1},
+			Path=NameText, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+        
+        <TextBlock Grid.Row="1" Grid.Column="0" Margin="3"
+				   Text="{DynamicResource Index}"
+				   VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+        <dxe:SpinEdit Grid.Row="2" Grid.Column="0" Name="spinEditIndex" Width="60"
+					  VerticalAlignment="Center" Margin="3" MinValue="1" MaxValue="99"
+					  EditValueType="{x:Type sys:Int32}"
+					  EditValue="{Binding Index, BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+					  EditValueChanging="Index_Changing"/>
+        
+        <Border Grid.Row="1" Grid.Column="0"
+                Grid.RowSpan="2" Grid.ColumnSpan="1"
+                BorderThickness="1" BorderBrush="White"/>
+        
+        <TextBlock Grid.Row="1" Grid.Column="1"
+                   Text="{DynamicResource Address}" Margin="3"
+                   VerticalAlignment="Stretch" HorizontalAlignment="Center"
+                   Visibility="{Binding
+			RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type interfaces:AIMSUserControl}, AncestorLevel=1},
+			Path=NotCamVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <dxe:SpinEdit Grid.Row="2" Grid.Column="1" Name="spinEditAddress" Width="60"
+                      VerticalAlignment="Center" Margin="3" MinValue="0" MaxValue="99"
+					  EditValueType="{x:Type sys:Int32}"
+                      EditValue="{Binding Address, BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                      Visibility="{Binding
+			RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type interfaces:AIMSUserControl}, AncestorLevel=1},
+			Path=NotCamVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                      EditValueChanging="Address_Changing"/>
+        
+        <Border Grid.Row="1" Grid.Column="1"
+                Grid.RowSpan="2" Grid.ColumnSpan="1"
+                BorderThickness="1" BorderBrush="White"
+                Visibility="{Binding
+			RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type interfaces:AIMSUserControl}, AncestorLevel=1},
+			Path=NotCamVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+        
+        <TextBlock Grid.Row="1" Grid.Column="2"
+                   Text="{DynamicResource Connection}" Margin="3"
+                   VerticalAlignment="Stretch" HorizontalAlignment="Center"
+                   Visibility="{Binding
+			RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type interfaces:AIMSUserControl}, AncestorLevel=1},
+			Path=NotCamVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <dxe:ToggleSwitch Name="toggleSwitchConnection" Grid.Row="2" Grid.Column="2" Margin="3" ToggleSwitchWidth="50"
+                          ContentPlacement="Inside"  AnimationMode="Always" EnableAnimation="True"
+                          CheckedStateContent="TCP" UncheckedStateContent="Serial"
+                          IsChecked="{Binding
+			RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type interfaces:AIMSUserControl}, AncestorLevel=1},
+			Path=IsTCP, BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                          Visibility="{Binding
+			RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type interfaces:AIMSUserControl}, AncestorLevel=1},
+			Path=NotCamVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+        
+        <Border Grid.Row="1" Grid.Column="2"
+                Grid.RowSpan="2" Grid.ColumnSpan="1"
+                BorderThickness="1" BorderBrush="White"
+                Visibility="{Binding
+			RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type interfaces:AIMSUserControl}, AncestorLevel=1},
+			Path=NotCamVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+        
+        <TextBlock Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3" Text="IP:Port" Margin="3"
+				   VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+        <dxe:TextEdit Grid.Row="2" Grid.Column="3" Name="textEditIP"
+					  VerticalAlignment="Center" Margin="3 3 2 3" Width="95"
+					  Text="{Binding IP, BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+					  Mask="(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)"
+					  MaskType="RegEx"
+					  IsEnabled="{Binding ElementName=toggleSwitchConnection, Path=IsChecked}"/>
+
+		<TextBlock Grid.Row="2" Grid.Column="4" Text=":" VerticalAlignment="Center" Margin="0"/>
+        <dxe:TextEdit Grid.Row="2" Grid.Column="5" Name="textEditPort"
+					  VerticalAlignment="Center" Margin="1 3 3 3" Width="42"
+					  Text="{Binding Port, BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+					  Mask="(6553[0-5]|655[0-2][0-9]|65[0-4][0-9][0-9]|6[0-4][0-9][0-9][0-9]|[0123455]?[0-9]?[0-9]?[0-9]?[0-9]?)"
+					  MaskType="RegEx"
+					  IsEnabled="{Binding ElementName=toggleSwitchConnection, Path=IsChecked}"/>
+
+        <Border Grid.Row="1" Grid.Column="3"
+                Grid.RowSpan="2" Grid.ColumnSpan="3"
+                BorderThickness="1" BorderBrush="White"/>
+        
+        <TextBlock Grid.Row="1" Grid.Column="6"
+                   Text="{DynamicResource Encryption}" Margin="3"
+                   VerticalAlignment="Stretch" HorizontalAlignment="Center"
+                   Visibility="{Binding
+			RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type interfaces:AIMSUserControl}, AncestorLevel=1},
+			Path=NotCamVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <dxe:ToggleSwitch Name="toggleSwitchEncrypted" Grid.Row="2" Grid.Column="6" Margin="3" ToggleSwitchWidth="75"
+                          ContentPlacement="Inside"  AnimationMode="Always" EnableAnimation="True"
+                          CheckedStateContent="{DynamicResource Encrypted}"
+                          UncheckedStateContent="{DynamicResource Raw}"
+                          IsChecked="{Binding Encrypted, BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                          Visibility="{Binding
+			RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type interfaces:AIMSUserControl}, AncestorLevel=1},
+			Path=NotCamVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+        
+        <Border Grid.Row="1" Grid.Column="6"
+                Grid.RowSpan="2" Grid.ColumnSpan="1"
+                BorderThickness="1" BorderBrush="White"
+                Visibility="{Binding
+			RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type interfaces:AIMSUserControl}, AncestorLevel=1},
+			Path=NotCamVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+        
+        <TextBlock Grid.Row="1" Grid.Column="7"
+                   Text="{DynamicResource Username}" Margin="3"
+                   VerticalAlignment="Stretch" HorizontalAlignment="Center"
+                   Visibility="{Binding
+			RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type interfaces:AIMSUserControl}, AncestorLevel=1},
+			Path=CamVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+		<dxe:TextEdit Grid.Row="2" Grid.Column="7" Name="textEditUsername"
+					  Margin="3" Width="80" VerticalAlignment="Center"
+					  Text="{Binding Username, BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                      Visibility="{Binding
+			RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type interfaces:AIMSUserControl}, AncestorLevel=1},
+			Path=CamVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+        
+        <Border Grid.Row="1" Grid.Column="7"
+				Grid.RowSpan="2" Grid.ColumnSpan="1"
+                BorderThickness="1" BorderBrush="White"
+                Visibility="{Binding
+			RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type interfaces:AIMSUserControl}, AncestorLevel=1},
+			Path=CamVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+        
+        <TextBlock Grid.Row="1" Grid.Column="8"
+                   Text="{DynamicResource Password}" Margin="3"
+                   VerticalAlignment="Stretch" HorizontalAlignment="Center"
+				   Visibility="{Binding
+			RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type interfaces:AIMSUserControl}, AncestorLevel=1},
+			Path=CamVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+		<dxe:TextEdit Grid.Row="2" Grid.Column="8" Name="textEditPassword"
+					  Margin="3" Width="80" VerticalAlignment="Center"
+					  Text="{Binding Password, BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+					  Visibility="{Binding
+			RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type interfaces:AIMSUserControl}, AncestorLevel=1},
+			Path=CamVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+        
+        <Border Grid.Row="1" Grid.Column="8"
+                Grid.RowSpan="2" Grid.ColumnSpan="1"
+                BorderThickness="1" BorderBrush="White"
+                Visibility="{Binding
+			RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type interfaces:AIMSUserControl}, AncestorLevel=1},
+			Path=CamVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+        
+        <Border Grid.Row="0" Grid.Column="0"
+                Grid.RowSpan="1" Grid.ColumnSpan="10"
+                BorderThickness="2" BorderBrush="White" />
+        <Border Grid.Row="1" Grid.Column="3"
+                Grid.RowSpan="2" Grid.ColumnSpan="10"
+                BorderThickness="1" BorderBrush="White"/>
+    </Grid>
+</interfaces:AIMSUserControl>

@@ -1,0 +1,165 @@
+﻿<interfaces:ZoneView
+	xmlns:interfaces="clr-namespace:AIMS3.FrontEnd.Modules.Interfaces"
+	x:Class="AIMS3.FrontEnd.Modules.FG.FGZoneView"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:sys="clr-namespace:System;assembly=mscorlib"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+	xmlns:Common="clr-namespace:AIMS3.FrontEnd.Modules.Common"
+	mc:Ignorable="d"
+	Height="Auto" Width="Auto">
+
+	<interfaces:ZoneView.BindingGroup>
+		<BindingGroup Name="BindingGroup"/>
+	</interfaces:ZoneView.BindingGroup>
+	
+	<Grid Width="Auto" Height="Auto">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="Auto"/>
+		</Grid.ColumnDefinitions>
+		
+		<Grid Grid.Column="0" Width="Auto" Height="Auto">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+			
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+			
+			<TextBlock Grid.Row="0" Name="textBlockName" Grid.ColumnSpan="2"
+						  Margin="3" FontSize="16" FontWeight="UltraBold"/>
+			
+			<dxe:CheckEdit Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Name="checkEditEneabled"
+                           Content="{DynamicResource Enabled}" Margin="3"
+                           IsChecked="{Binding Enabled, BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+
+			<dxe:CheckEdit Grid.Row="3" Grid.Column="0" Name="checkEditAutomaticReset"
+                           Content="{DynamicResource AutomaticReset}" Margin="3"
+                           IsChecked="{Binding AutomaticReset, BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+			
+			<TextBlock Grid.Row="1" Grid.Column="2"
+					   Text="Cut" Margin="3" HorizontalAlignment="Center"/>
+			
+			<TextBlock Grid.Row="1" Grid.Column="3"
+					   Text="Climb" Margin="3" HorizontalAlignment="Center"/>
+			
+			<TextBlock Grid.Row="2" Grid.Column="1" Text="{DynamicResource Sensitivity}"
+					   HorizontalAlignment="{DynamicResource HorizontalAlignment}"
+					   Margin="3" VerticalAlignment="Center"/>
+			
+			<dxe:SpinEdit Name="spinEditCutSensitivity" Grid.Row="2" Grid.Column="2"
+						  Margin="3" IsTextEditable="True" ShowEditorButtons="True"
+						  EditValueType="{x:Type sys:Int32}"
+                          EditValue="{Binding CutSensitivity, BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                          MinValue="1" MaxValue="16" Width="60"/>
+			
+			<dxe:SpinEdit Name="spinEditClimbSensitivity" Grid.Row="2" Grid.Column="3"
+						  Margin="3" IsTextEditable="True" ShowEditorButtons="True"
+						  EditValueType="{x:Type sys:Int32}"
+                          EditValue="{Binding ClimbSensitivity, BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                          MinValue="1" MaxValue="16" Width="60"/>
+			
+			<TextBlock Grid.Row="3" Grid.Column="1" Text="{DynamicResource Pulses}"
+					   HorizontalAlignment="{DynamicResource HorizontalAlignment}"
+					   Margin="3" VerticalAlignment="Center"/>
+			
+			<dxe:SpinEdit Name="spinEditCutPulses" Grid.Row="3" Grid.Column="2"
+						  Margin="3" IsTextEditable="True" ShowEditorButtons="True"
+						  EditValueType="{x:Type sys:Int32}"
+                          EditValue="{Binding CutPulses, BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                          MinValue="1" MaxValue="12" Width="60"/>
+			
+			<dxe:SpinEdit Name="spinEditClimbPulses" Grid.Row="3" Grid.Column="3"
+						  Margin="3" IsTextEditable="True" ShowEditorButtons="True"
+						  EditValueType="{x:Type sys:Int32}"
+                          EditValue="{Binding ClimbPulses, BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                          MinValue="1" MaxValue="12" Width="60"/>
+			
+			<TextBlock Grid.Row="4" Grid.Column="1" Text="{DynamicResource TimeWindow}"
+					   HorizontalAlignment="{DynamicResource HorizontalAlignment}"
+					   Margin="3" VerticalAlignment="Center"/>
+			
+			<dxe:SpinEdit Name="spinEditCutTimeWindow" Grid.Row="4" Grid.Column="2"
+						  Margin="3" IsTextEditable="True" ShowEditorButtons="True"
+						  EditValueType="{x:Type sys:Int32}"
+                          EditValue="{Binding CutTimeWindow, BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                          MinValue="5" MaxValue="60" Width="60"/>
+			
+			<dxe:SpinEdit Name="spinEditClimbTimeWindow" Grid.Row="4" Grid.Column="3"
+						  Margin="3" IsTextEditable="True" ShowEditorButtons="True"
+						  EditValueType="{x:Type sys:Int32}"
+                          EditValue="{Binding ClimbTimeWindow, BindingGroupName=BindingGroup, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                          MinValue="1" MaxValue="12" Width="60"/>
+			
+			<TextBlock Grid.Row="5" Grid.Column="1" Text="{DynamicResource Pretime}"
+						  HorizontalAlignment="{DynamicResource HorizontalAlignment}"
+					   Margin="3" VerticalAlignment="Center"/>
+			
+			<dxe:SpinEdit Name="spinEditPreTime" Grid.Row="5" Grid.Column="2"
+						  Margin="3" IsTextEditable="True" ShowEditorButtons="True"
+						  EditValueType="{x:Type sys:Double}"
+                          EditValue="{Binding
+				RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type interfaces:ZoneView}, AncestorLevel=1},
+				Path=PreTime, BindingGroupName=BindingGroup,
+				Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                          MinValue="0.1" MaxValue="1" Increment="0.1" Width="60"/>
+			
+			<Border Grid.Column="0" Grid.Row="1" Grid.RowSpan="1" Grid.ColumnSpan="1"
+					BorderThickness="1" BorderBrush="Gray"/>
+
+			<Border Grid.Column="0" Grid.Row="2" Grid.RowSpan="1" Grid.ColumnSpan="1"
+					BorderThickness="1" BorderBrush="Gray"/>
+
+			<Border Grid.Column="0" Grid.Row="3" Grid.RowSpan="1" Grid.ColumnSpan="1"
+					BorderThickness="1" BorderBrush="Gray"/>
+
+			<Border Grid.Column="0" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="1"
+					BorderThickness="1" BorderBrush="Gray"/>
+
+			<Border Grid.Column="0" Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="1"
+					BorderThickness="1" BorderBrush="White"/>
+
+			<Border Grid.Column="2" Grid.Row="1" Grid.RowSpan="6" Grid.ColumnSpan="1"
+					BorderThickness="1" BorderBrush="Gray"/>
+
+			<Border Grid.Column="1" Grid.Row="1" Grid.RowSpan="1" Grid.ColumnSpan="3"
+					BorderThickness="1" BorderBrush="Gray"/>
+
+			<Border Grid.Column="1" Grid.Row="2" Grid.RowSpan="1" Grid.ColumnSpan="3"
+					BorderThickness="1" BorderBrush="Gray"/>
+
+			<Border Grid.Column="1" Grid.Row="3" Grid.RowSpan="1" Grid.ColumnSpan="3"
+					BorderThickness="1" BorderBrush="Gray"/>
+
+			<Border Grid.Column="1" Grid.Row="4" Grid.RowSpan="1" Grid.ColumnSpan="3"
+					BorderThickness="1" BorderBrush="Gray"/>
+
+			<Border Grid.Column="1" Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="3"
+					BorderThickness="1" BorderBrush="White"/>
+		</Grid>
+
+		<Common:RelayAssign x:Name="relayAssign" Grid.Column="1"
+							Width="Auto" Height="158" VerticalAlignment="Stretch" Margin="1"/>
+
+		<Common:CameraAssign x:Name="cameraAssign" Grid.Column="2"
+							 Width="Auto" Height="158" VerticalAlignment="Stretch" Margin="1"/>
+
+		<Border Grid.Column="0" BorderThickness="1" BorderBrush="White"/>
+		<Border Grid.Column="1" BorderThickness="1" BorderBrush="White"/>
+		<Border Grid.Column="2" BorderThickness="1" BorderBrush="White"/>
+	</Grid>
+</interfaces:ZoneView>

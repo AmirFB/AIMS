@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+	<!--PlantView-->
+    <system:Boolean x:Key="CanMapPopUp">True</system:Boolean>
+	<system:Boolean x:Key="CanMapEdit">True</system:Boolean>
+	<system:Boolean x:Key="CanUploadMap">True</system:Boolean>
+	<system:Boolean x:Key="CanNew">True</system:Boolean>
+	<system:Boolean x:Key="CanUsers">True</system:Boolean>
+    <system:Boolean x:Key="CanExit">True</system:Boolean>
+    <system:Boolean x:Key="CanSettings">True</system:Boolean>
+	<system:Boolean x:Key="CanModules">True</system:Boolean>
+	<system:Boolean x:Key="CanUtilityModule">True</system:Boolean>
+	<Visibility x:Key="CanSetAll">Visible</Visibility>
+	<Visibility x:Key="CanResetAll">Visible</Visibility>
+	<Visibility x:Key="CanInitAll">Visible</Visibility>
+	<Visibility x:Key="CanPause">Visible</Visibility>
+</ResourceDictionary>

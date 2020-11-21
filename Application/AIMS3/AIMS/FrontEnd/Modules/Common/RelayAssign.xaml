@@ -1,0 +1,51 @@
+﻿	<UserControl
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+		xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+		x:Class="AIMS3.FrontEnd.Modules.Common.RelayAssign"
+		Height="Auto" Width="Auto">
+
+    <Grid MaxHeight="250">
+		<dxg:GridControl Name="gridControl" EnableSmartColumnsGeneration="True"
+                         ItemsSource="{Binding Modules, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                         Height="Auto" Width="Auto">
+            <dxg:GridControl.View>
+                <dxg:TableView Height="Auto" Width="Auto" ShowGroupPanel="False"/>
+            </dxg:GridControl.View>
+			
+			<dxg:GridColumn Name="columnSelected" FieldName="Selected" Width="40"
+                            Header="{DynamicResource Select}"
+							HorizontalHeaderContentAlignment="Center">
+				<dxg:GridColumn.EditSettings>
+                    <dxe:CheckEditSettings HorizontalContentAlignment="Center"/>
+                </dxg:GridColumn.EditSettings>
+			</dxg:GridColumn>
+			
+			<dxg:GridColumn Name="columnName" FieldName="Name" Width="60"
+                            Header="{DynamicResource Module}" HorizontalHeaderContentAlignment="Center">
+				<dxg:GridColumn.EditSettings>
+					<dxe:TextEditSettings HorizontalContentAlignment="Center"/>
+				</dxg:GridColumn.EditSettings>
+			</dxg:GridColumn>
+
+			<dxg:GridColumn FieldName="SelectedRelay" Name="columnRelay" Width="60"
+                            Header="{DynamicResource Relay}" HorizontalHeaderContentAlignment="Center">
+
+				<dxg:GridColumn.CellTemplate>
+					<DataTemplate>
+						<dxe:ComboBoxEdit Width="Auto"
+                                          ItemsSource="{Binding RowData.Row.Relays, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                                          EditValue="{Binding RowData.Row.SelectedObjects, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          DisplayMember="Name" ImmediatePopup="True"
+                                          AutoComplete="True" IncrementalFiltering="True" IsReadOnly="False">
+							<dxe:ComboBoxEdit.StyleSettings>
+								<dxe:CheckedComboBoxStyleSettings />
+							</dxe:ComboBoxEdit.StyleSettings>
+						</dxe:ComboBoxEdit>
+					</DataTemplate>
+				</dxg:GridColumn.CellTemplate>
+			</dxg:GridColumn>
+		</dxg:GridControl>
+    </Grid>
+</UserControl>

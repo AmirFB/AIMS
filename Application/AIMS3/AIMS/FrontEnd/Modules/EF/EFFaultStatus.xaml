@@ -1,0 +1,117 @@
+﻿<interfaces:FaultStatus
+	xmlns:interfaces="clr-namespace:AIMS3.FrontEnd.Modules.Interfaces"
+    x:Class="AIMS3.FrontEnd.Modules.EF.EFFaultStatus"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    SizeToContent="WidthAndHeight" ShowInTaskbar="False" ShowIcon="False"
+    Topmost="True" Closing="Window_Closing"
+    Title="{Binding Name, Mode=OneWay}"
+	ControlBoxButtonSet="Close">
+
+	<interfaces:FaultStatus.BindingGroup>
+		<BindingGroup Name="BindingGroup"/>
+	</interfaces:FaultStatus.BindingGroup>
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+		<Grid Grid.Row="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+
+			<TextBlock Grid.Row="0" Grid.Column="0" Margin="3"
+                       HorizontalAlignment="{DynamicResource HorizontalAlignment}"
+                       Text="{DynamicResource Module}"/>
+			<TextBlock Grid.Row="0" Grid.Column="1" Name="textBlockModule" Margin="3"
+                       HorizontalAlignment="{DynamicResource HorizontalAlignment}"
+                       Text="{Binding Module,
+				Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+			<TextBlock Grid.Row="1" Grid.Column="0" Margin="3"
+                       HorizontalAlignment="{DynamicResource HorizontalAlignment}"
+                       Text="{DynamicResource Fault}"/>
+			<TextBlock Grid.Row="1" Grid.Column="1" Name="textBlockFault" Margin="3"
+                       HorizontalAlignment="{DynamicResource HorizontalAlignment}"
+                       Text="{Binding Name_, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+			<TextBlock Grid.Row="2" Grid.Column="0" Name="textBlockHVTitle" Margin="3"
+                       Text="HV"
+					   Visibility="{Binding IsZone,
+				Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+			<TextBlock Grid.Row="2" Grid.Column="1" Name="textBlockHV" Margin="3"
+                       HorizontalAlignment="{DynamicResource HorizontalAlignment}"
+                       Text="{Binding HVRaised,
+				Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+					   Visibility="{Binding IsZone,
+				Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                       Foreground="{Binding HVColor,
+				Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+			<TextBlock Grid.Row="3" Grid.Column="0" Name="textBlockLVTitle" Margin="3"
+                       Text="LV" 
+					   Visibility="{Binding IsZone,
+				BindingGroupName=BindingGroup, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+			<TextBlock Grid.Row="3" Grid.Column="1" Name="textBlockLV" Margin="3"
+                       HorizontalAlignment="{DynamicResource HorizontalAlignment}"
+                       Text="{Binding LVRaised,
+				Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+					   Visibility="{Binding IsZone,
+				Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                       Foreground="{Binding LVColor,
+				Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+			<TextBlock Grid.Row="4" Grid.Column="0" Margin="3"
+                       HorizontalAlignment="{DynamicResource HorizontalAlignment}"
+                       Text="{DynamicResource Tamper}"
+					   Visibility="{Binding IsSOS,
+				Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+			<TextBlock Grid.Row="4" Grid.Column="1" Name="textBlockTamper" Margin="3"
+                       HorizontalAlignment="{DynamicResource HorizontalAlignment}"
+                       Text="{Binding TamperRaised,
+				BindingGroupName=BindingGroup}"
+					   Visibility="{Binding IsSOS,
+				Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                       Foreground="{Binding TamperColor,
+				Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+			<TextBlock Grid.Row="5" Grid.Column="0" Margin="3"
+                       HorizontalAlignment="{DynamicResource HorizontalAlignment}"
+                       Text="{DynamicResource Connection}"/>
+			<TextBlock Grid.Row="5" Grid.Column="1" Name="textBlockConnection" Margin="3"
+                       HorizontalAlignment="{DynamicResource HorizontalAlignment}"
+                       Text="{Binding Connected,
+				Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                       Foreground="{Binding ConnectedColor,
+				Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+		</Grid>
+
+		<StackPanel Grid.Row="1" Orientation="Horizontal">
+			<dx:SimpleButton x:Name="simpleButtonReset" Content="{DynamicResource ResetFault}"
+							 Width="{DynamicResource ButtonWidth}" Height="{DynamicResource ButtonHeight}"
+							 Click="Reset_Click" Margin="3"
+							 IsEnabled="{Binding CanReset,
+				Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+			<dx:SimpleButton x:Name="simpleButtonAcknowledge" Content="{DynamicResource Acknowledge}"
+							 Width="{DynamicResource ButtonWidth}" Height="{DynamicResource ButtonHeight}"
+							 Click="Acknowledge_Click" Margin="3"
+							 IsEnabled="{Binding CanAcknowledge,
+				Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+		</StackPanel>
+	</Grid>
+</interfaces:FaultStatus>

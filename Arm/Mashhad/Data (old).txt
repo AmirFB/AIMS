@@ -1,0 +1,10 @@
+Serial Number: IHPciRalRUMmJ001
+Special ID: 6011-9609-6030
+Manager Password: adJklRZBgGnqvwW2
+Developer Password: adkMMOQtu4cfFklo
+AES: ajwfiU49M7puCY4L
+Read Key: F97818D28C523A7DBC283C4E255B3A6D
+Write Key: 298757311DC8BEFC771B30EF26B3C83B
+Equation: 254-503+35-55
+Query: 12-3-8-0-7,13
+Encode: 25, 10, 18, 47, 13, 4, 8, 26, 55, 73

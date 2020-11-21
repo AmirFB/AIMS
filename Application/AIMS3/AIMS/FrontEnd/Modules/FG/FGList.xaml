@@ -1,0 +1,70 @@
+﻿<interfaces:ModuleList2
+	xmlns:interfaces="clr-namespace:AIMS3.FrontEnd.Modules.Interfaces"
+	x:Class="AIMS3.FrontEnd.Modules.FG.FGList"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+	xmlns:dxnav="http://schemas.devexpress.com/winfx/2008/xaml/navigation"
+	mc:Ignorable="d">
+
+	<Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+
+		<dxnav:TileBar Grid.Column="0" Padding="10" Background="DarkGreen"
+					   Orientation="Vertical" VerticalAlignment="Stretch">
+			<dxnav:TileBarItem Margin="0"
+							   Width="{DynamicResource ModuleListTileSize}"
+							   Height="{DynamicResource ModuleListTileSize}"
+							   Background="RoyalBlue" AllowGlyphTheming="True"
+							   TileGlyph="{dx:DXImage SvgImages/Icon Builder/Actions_Add.svg}"
+							   HorizontalTileGlyphAlignment="Center"  VerticalTileGlyphAlignment="Center"
+							   Click="New_Click">
+			</dxnav:TileBarItem>
+
+			<dxnav:TileBarItem Margin="0"
+							   Width="{DynamicResource ModuleListTileSize}"
+							   Height="{DynamicResource ModuleListTileSize}"
+							   Background="RoyalBlue" AllowGlyphTheming="True"
+							   TileGlyph="{dx:DXImage SvgImages/XAF/Action_Refresh.svg}"
+							   HorizontalTileGlyphAlignment="Center"  VerticalTileGlyphAlignment="Center"
+							   Click="Refresh_Click">
+			</dxnav:TileBarItem>
+
+			<dxnav:TileBarItem Margin="0"
+							   Width="{DynamicResource ModuleListTileSize}"
+							   Height="{DynamicResource ModuleListTileSize}"
+							   Background="RoyalBlue" AllowGlyphTheming="True"
+							   TileGlyph="{dx:DXImage SvgImages/Outlook Inspired/Save.svg}"
+							   HorizontalTileGlyphAlignment="Center"  VerticalTileGlyphAlignment="Center"
+							   Click="Save_Click" ColorMode="Standard">
+			</dxnav:TileBarItem>
+
+			<dxnav:TileBarItem Margin="0"
+							   Width="{DynamicResource ModuleListTileSize}"
+							   Height="{DynamicResource ModuleListTileSize}"
+							   Background="RoyalBlue" AllowGlyphTheming="True"
+							   TileGlyph="{dx:DXImage SvgImages/HybridDemoIcons/BottomPanel/HybridDemo_Delete.svg}"
+							   HorizontalTileGlyphAlignment="Center"  VerticalTileGlyphAlignment="Center"
+							   Click="Delete_Click" ColorMode="Standard">
+			</dxnav:TileBarItem>
+		</dxnav:TileBar>
+
+		<ScrollViewer Name="scrollViewer" Grid.Column="1" Width="Auto"
+					  HorizontalAlignment="Stretch" VerticalAlignment="Top"
+					  HorizontalScrollBarVisibility="Auto"
+					  VerticalScrollBarVisibility="Auto">
+			<ItemsControl Name="itemsControl">
+				<ItemsControl.ItemsPanel>
+					<ItemsPanelTemplate>
+						<StackPanel Orientation="Horizontal"/>
+					</ItemsPanelTemplate>
+				</ItemsControl.ItemsPanel>
+			</ItemsControl>
+		</ScrollViewer>
+	</Grid>
+</interfaces:ModuleList2>

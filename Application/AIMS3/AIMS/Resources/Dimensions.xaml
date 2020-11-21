@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <system:String x:Key="Version">AIMS 3.0.0</system:String>
+    <Thickness x:Key="ButtonMarginBottom">5 3 5 3</Thickness>
+    <Thickness x:Key="ButtonMarginTop">5 3 5 3</Thickness>
+    <Thickness x:Key="ButtonMarginMiddle">10 5 10 5</Thickness>
+	<Thickness x:Key="ModuleListMargin">10 0 10 0</Thickness>
+	<Thickness x:Key="ModuleListTileMargin">0 3 0 3</Thickness>
+	<Thickness x:Key="ModuleListTilePadding">0 3 0 3</Thickness>
+	<system:Double x:Key="ButtonHeight">22</system:Double>
+	<system:Double x:Key="ButtonWidth">80</system:Double>
+    <system:Double x:Key="ModuleListTileSize">50</system:Double>
+</ResourceDictionary>

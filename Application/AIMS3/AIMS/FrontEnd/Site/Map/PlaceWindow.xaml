@@ -1,0 +1,69 @@
+﻿<interfaces:AIMSWindow
+	xmlns:interfaces="clr-namespace:AIMS3.FrontEnd.Interfaces"
+	xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+	x:Class="AIMS3.FrontEnd.Site.Map.PlaceWindow"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+	Width="Auto" Height="Auto" SizeToContent="WidthAndHeight"
+	ControlBoxButtonSet="Close" Topmost="True" ShowInTaskbar="False"
+	ShowIcon="False" Title="{DynamicResource Place}"
+	Closing="Window_Closing" ResizeMode="NoResize">
+
+	<Grid Grid.Row="1" Width="Auto" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="Auto"/>
+		</Grid.ColumnDefinitions>
+
+		<TextBlock Grid.Row="0" Grid.Column="0" Margin="3"
+					   Text="{DynamicResource Fault}"
+					   VerticalAlignment="Center"
+					   HorizontalAlignment="{DynamicResource HorizontalAlignment}"/>
+		<dxe:ComboBoxEdit Grid.Row="0" Grid.Column="1" Name="comboBoxEditFault" Margin="3"
+						  Width="70" Height="Auto" VerticalAlignment="Center"
+						  ItemsSource="{Binding Faults, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+						  SelectedItem="{Binding SelectedFault, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"
+						  SelectedIndex="0"/>
+		<dx:SimpleButton Grid.Row="0" Grid.Column="2" Height="25" Width="25" Margin="3"
+						 Glyph="{dx:DXImage SvgImages/XAF/Editor_Edit.svg}"
+						 Click="Faults_Click"/>
+
+		<TextBlock Grid.Row="1" Grid.Column="0" Margin="3" Text="{DynamicResource Relay}"
+				   VerticalAlignment="Center"
+				   HorizontalAlignment="{DynamicResource HorizontalAlignment}"/>
+		<dxe:ComboBoxEdit Grid.Row="1" Grid.Column="1" Name="comboBoxEditRelay" Width="70" Margin="3" Height="Auto" VerticalAlignment="Center"
+						  ItemsSource="{Binding Relays, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+						  SelectedItem="{Binding SelectedRelay, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"
+						  SelectedIndex="0"/>
+		<dx:SimpleButton Grid.Row="1" Grid.Column="2" Height="25" Width="25" Margin="3"
+						 Glyph="{dx:DXImage SvgImages/XAF/Editor_Edit.svg}"
+						 Click="Relays_Click"/>
+
+		<TextBlock Grid.Row="2" Grid.Column="0" Margin="3" Text="{DynamicResource Camera}"
+				   VerticalAlignment="Center"
+				   HorizontalAlignment="{DynamicResource HorizontalAlignment}"/>
+		<dxe:ComboBoxEdit Grid.Row="2" Grid.Column="1" Name="comboBoxEditCamera" Width="70" Margin="3" Height="Auto" VerticalAlignment="Center"
+						  ItemsSource="{Binding Cameras, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+						  SelectedItem="{Binding SelectedCamera, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"
+						  SelectedIndex="0"/>
+		<dx:SimpleButton Grid.Row="2" Grid.Column="2" Height="25" Width="25" Margin="3"
+						 Glyph="{dx:DXImage SvgImages/XAF/Editor_Edit.svg}"
+						 Click="Camera_Click"/>
+
+		<TextBlock Grid.Row="3" Grid.Column="0" Margin="3" Text="{DynamicResource ClearAll}"
+				   VerticalAlignment="Center" Grid.ColumnSpan="2"
+				   HorizontalAlignment="{DynamicResource HorizontalAlignment}"/>
+		<dx:SimpleButton Grid.Row="3" Grid.Column="2" Height="25" Width="25" Margin="3"
+						 Glyph="{dx:DXImage SvgImages/Icon Builder/Actions_Clear.svg}"
+						 Click="ClearAll_Click"/>
+	</Grid>
+</interfaces:AIMSWindow>

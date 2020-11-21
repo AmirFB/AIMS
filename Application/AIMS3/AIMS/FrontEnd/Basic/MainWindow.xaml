@@ -1,0 +1,187 @@
+﻿<interfaces:AIMSWindow
+	xmlns:interfaces="clr-namespace:AIMS3.FrontEnd.Interfaces"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+	xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+	xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+	x:Class="AIMS3.FrontEnd.Main.MainWindow"
+	Title="{DynamicResource Version}"
+	MinWidth="450" MinHeight="300"
+	WindowState="Maximized">
+
+    <Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		
+		<dxr:RibbonControl Grid.Row="1" IsHeaderBorderVisible="True"
+						   MinimizationButtonVisibility="Auto"
+						   MinimizationButtonPosition="PageHeader" RibbonStyle="Office2007"
+                           PageCategoryAlignment="Left" ToolbarShowMode="ShowAbove"
+                           ShowApplicationButton="True"
+                           ApplicationButtonLargeIcon="{dx:SvgImageSource Uri='pack://application:,,,/Resources/Icons/Logo/Logo3.svg', Size='28,28', AutoSize=True}">
+			<dxr:RibbonControl.ApplicationMenu>
+                <dxr:ApplicationMenu RightPaneWidth="280" ShowRightPane="True" GlyphSize="Large">
+                    <dxb:BarButtonItem Content="{DynamicResource Sites}"
+                                       LargeGlyph="{dx:SvgImageSource Uri='pack://application:,,,/Resources/Icons/MainWindow/Sites.svg', AutoSize=True}"
+									   Description="{DynamicResource NewLocalDesc}"
+									   Hint="{DynamicResource NewLocalDesc}"
+									   RibbonStyle="Large"
+									   ItemClick="Sites_Click"/>
+                    
+                    <dxb:BarButtonItem Content="{DynamicResource _NewLocal}"
+                                       LargeGlyph="{dx:SvgImageSource Uri='pack://application:,,,/Resources/Icons/MainWindow/LocalSite.svg', AutoSize=True}"
+									   Description="{DynamicResource NewLocalDesc}"
+									   Hint="{DynamicResource NewLocalDesc}"
+									   RibbonStyle="Large"
+									   ItemClick="NewLocal_Click"/>
+					
+                    <dxb:BarButtonItem Content="{DynamicResource _NewRemote}"
+                                       LargeGlyph="{dx:SvgImageSource Uri='pack://application:,,,/Resources/Icons/MainWindow/RemoteSite.svg', AutoSize=True}"
+									   Description="{DynamicResource NewRemoteDesc}"
+									   Hint="{DynamicResource NewRemoteDesc}"
+									   RibbonStyle="Large"
+									   ItemClick="NewRemote_Click"/>
+
+                    <dxb:BarButtonItem Content="{DynamicResource ApplicationSettings}"
+                                       LargeGlyph="{dx:SvgImageSource Uri='pack://application:,,,/Resources/Icons/MainWindow/ApplicationSettings.svg', AutoSize=True}"
+									   Description="{DynamicResource ApplicationSettingsDesc}"
+									   Hint="{DynamicResource ApplicationSettingsDesc}"
+									   RibbonStyle="Large"
+									   ItemClick="ApplicationSettings_Click"/>
+
+                    <dxb:BarButtonItem Content="{DynamicResource _Users}"
+                                       LargeGlyph="{dx:SvgImageSource Uri='pack://application:,,,/Resources/Icons/MainWindow/Users.svg', AutoSize=True}"
+									   Description="{DynamicResource UsersDesc}"
+									   Hint="{DynamicResource UsersDesc}"
+									   RibbonStyle="Large"
+									   ItemClick="Users_Click"/>
+					
+                    <dxb:BarButtonItem Content="{DynamicResource _Logout}"
+                                       LargeGlyph="{dx:SvgImageSource Uri='pack://application:,,,/Resources/Icons/MainWindow/Logout.svg', AutoSize=True}"
+									   Description="{DynamicResource LogoutDesc}"
+									   Hint="{DynamicResource LogoutDesc}"
+									   RibbonStyle="Large"
+									   ItemClick="Logout_Click"/>
+					
+                    <dxb:BarButtonItem Content="{DynamicResource _Exit}"
+                                       LargeGlyph="{dx:SvgImageSource Uri='pack://application:,,,/Resources/Icons/MainWindow/Exit.svg', AutoSize=True}"
+									   Description="{DynamicResource ExitDesc}"
+									   Hint="{DynamicResource ExitDesc}"
+									   RibbonStyle="Large"
+									   ItemClick="Exit_Click"/>
+				</dxr:ApplicationMenu>
+			</dxr:RibbonControl.ApplicationMenu>
+			
+			<dxr:RibbonDefaultPageCategory >
+				<dxr:RibbonPage Caption="{DynamicResource Menu}">
+					<dxr:RibbonPageGroup Caption="{DynamicResource System}">
+						<dxb:BarButtonItem Content="{DynamicResource Settings}"
+										   RibbonStyle="Large"
+										   LargeGlyph="{dx:SvgImageSource Uri='pack://application:,,,/Resources/Icons/MainWindow/Settings.svg', AutoSize=True}"
+										   ItemClick="Settings_Click"/>
+						
+						<dxb:BarButtonItem Content="{DynamicResource Connection}"
+										   RibbonStyle="Large"
+										   LargeGlyph="{dx:SvgImageSource Uri='pack://application:,,,/Resources/Icons/MainWindow/Connection.svg', AutoSize=True}"
+										   ItemClick="Connection_Click"/>
+						
+						<dxb:BarButtonItem Content="{DynamicResource Modules}"
+										   RibbonStyle="Large"
+										   LargeGlyph="{dx:SvgImageSource Uri='pack://application:,,,/Resources/Icons/MainWindow/Analyzer.svg', AutoSize=True}"
+										   ItemClick="Modules_Click"/>
+						
+						<dxb:BarButtonItem Content="{DynamicResource Report}"
+										   RibbonStyle="Large"
+										   LargeGlyph="{dx:SvgImageSource Uri='pack://application:,,,/Resources/Icons/MainWindow/Log.svg', AutoSize=True}"
+										   ItemClick="Report_Click"/>
+					</dxr:RibbonPageGroup>
+					
+					<dxr:RibbonPageGroup Caption="{DynamicResource Map}">
+						<dxb:BarButtonItem Content="{DynamicResource Upload}"
+										   RibbonStyle="Large"
+										   LargeGlyph="{dx:SvgImageSource Uri='pack://application:,,,/Resources/Icons/MainWindow/Upload.svg', AutoSize=True}"
+										   ItemClick="Upload_Click"/>
+						
+						<dxb:BarButtonItem Content="{DynamicResource Place}"
+										   RibbonStyle="Large"
+										   LargeGlyph="{dx:SvgImageSource Uri='pack://application:,,,/Resources/Icons/MainWindow/Place.svg', AutoSize=True}"
+										   ItemClick="Place_Click"/>
+						
+						<dxb:BarCheckItem Content="{DynamicResource ShowStatistics}"
+										  IsChecked="{Binding ShowStatistics, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+										  Glyph="{dx:SvgImageSource Uri='pack://application:,,,/Resources/Icons/MainWindow/Statistics.svg', AutoSize=True}"
+										  CheckedChanged="Statistics_Changed"/>
+
+						<dxb:BarCheckItem Content="{DynamicResource ShowTemperature}"
+										  IsChecked="{Binding ShowTemperature, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+										  Glyph="{dx:SvgImageSource Uri='pack://application:,,,/Resources/Icons/MainWindow/Temperature.svg', AutoSize=True}"
+										  CheckedChanged="Temperature_Changed"/>
+						
+						<dxb:BarCheckItem Content="{DynamicResource MoveIcons}"
+										  IsChecked="{Binding CanMove, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+										  Glyph="{dx:SvgImageSource Uri='pack://application:,,,/Resources/Icons/MainWindow/Move1.svg', AutoSize=True}"/>
+					</dxr:RibbonPageGroup>
+					
+                    <dxr:RibbonPageGroup Caption="{DynamicResource Fault}">
+                        <dxb:BarButtonItem Content="{DynamicResource AcknowledgeFaults}"
+										   RibbonStyle="Large"
+										   LargeGlyph="{dx:SvgImageSource Uri='pack://application:,,,/Resources/Icons/MainWindow/AcknowledgeAll.svg', AutoSize=True}"
+										   ItemClick="AcknowledgeFaults_Click"/>
+						
+                        <dxb:BarButtonItem Content="{DynamicResource ResetFaults}"
+										   RibbonStyle="Large"
+										   LargeGlyph="{dx:SvgImageSource Uri='pack://application:,,,/Resources/Icons/MainWindow/ResetAll.svg', AutoSize=True}"
+										   ItemClick="ResetFaults_Click"/>
+                    </dxr:RibbonPageGroup>
+					
+                    <dxr:RibbonPageGroup Caption="{DynamicResource Module}"
+										 IsVisible="{DynamicResource CanUtilityModule}">
+                        <dxb:BarButtonItem Content="{DynamicResource InitializeAnalyzers}"
+										   RibbonStyle="Large"
+										   LargeGlyph="{dx:SvgImageSource Uri='pack://application:,,,/Resources/Icons/MainWindow/InitializeAnalyzers.svg', AutoSize=True}"
+										   ItemClick="InitializeAll_Click"/>
+                        <dxb:BarButtonItem Content="{DynamicResource InitializeCameras}"
+										   RibbonStyle="Large"
+										   LargeGlyph="{dx:SvgImageSource Uri='pack://application:,,,/Resources/Icons/MainWindow/InitializeCameras.svg', AutoSize=True}"
+										   ItemClick="InitializeCams_Click"/>
+						
+                        <dxb:BarCheckItem Content="{DynamicResource Freeze}"
+										  RibbonStyle="Large"
+										  LargeGlyph="{dx:SvgImageSource Uri='pack://application:,,,/Resources/Icons/MainWindow/Freeze.svg', AutoSize=True}"
+										  IsVisible="{Binding FreezeEnabled}"
+										  IsChecked="{Binding Freezed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+										  ItemClick="Freeze_Click"/>
+                    </dxr:RibbonPageGroup>
+					
+                    <dxr:RibbonPageGroup Caption="{DynamicResource Alarm}">
+                        <dxb:BarButtonItem Content="{DynamicResource Mute}"
+										   RibbonStyle="Large"
+										   LargeGlyph="{dx:SvgImageSource Uri='pack://application:,,,/Resources/Icons/MainWindow/Mute.svg', AutoSize=True}"
+										   ItemClick="Mute_Click"/>
+						
+                        <dxb:BarButtonItem Content="{DynamicResource SetAlarms}"
+										   RibbonStyle="Large"
+										   LargeGlyph="{dx:SvgImageSource Uri='pack://application:,,,/Resources/Icons/MainWindow/RaiseAlarms.svg', AutoSize=True}"
+										   ItemClick="SetAlarms_Click"/>
+						
+                        <dxb:BarButtonItem Content="{DynamicResource ResetAlarms}"
+										   RibbonStyle="Large"
+										   LargeGlyph="{dx:SvgImageSource Uri='pack://application:,,,/Resources/Icons/MainWindow/ResetAlarms.svg', AutoSize=True}"
+										   ItemClick="ResetAlarms_Click"/>
+                    </dxr:RibbonPageGroup>
+                </dxr:RibbonPage>
+			</dxr:RibbonDefaultPageCategory>
+		</dxr:RibbonControl>
+		
+		<dx:DXTabControl Grid.Row="2" x:Name="tabControl" VerticalAlignment="Stretch"
+						 SelectionChanged="tabControl_SelectionChanged">
+			<dx:DXTabControl.View>
+				<dx:TabControlMultiLineView HeaderLocation="Top"/>
+			</dx:DXTabControl.View>
+		</dx:DXTabControl>
+	</Grid>
+</interfaces:AIMSWindow>

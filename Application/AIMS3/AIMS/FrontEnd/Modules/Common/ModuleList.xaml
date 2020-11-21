@@ -1,0 +1,100 @@
+﻿<UserControl
+    x:Class="AIMS3.FrontEnd.Modules.Common.ModuleList"
+    xmlns:local="clr-namespace:AIMS3.FrontEnd.Modules.Common"
+    xmlns:modules="clr-namespace:AIMS3.BackEnd.Modules"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="ForegroundAddress" Color="White"/>
+        
+        <ContextMenu x:Key="CategoryContextMenu">
+            <MenuItem Header="{DynamicResource New}"
+                      Click="TreeView_New"/>
+
+            <MenuItem Header="{DynamicResource Remove}"
+                      Click="TreeView_Remove"
+                      Visibility="{Binding ModuleVisibility}"/>
+
+            <MenuItem Header="{DynamicResource RemoveAll}"
+                      Click="TreeView_RemoveAll"/>
+        </ContextMenu>
+    </UserControl.Resources>
+    
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <TreeView Grid.Column="0" Name="treeView"
+                  ItemsSource="{Binding Modules}"
+                  ContextMenu="{StaticResource CategoryContextMenu}"
+                  SelectedItemChanged="TreeView_SelectedItemChanged"
+                  PreviewMouseRightButtonDown="TreeView_PreviewRightClick">
+            <TreeView.Resources>
+                <HierarchicalDataTemplate DataType="{x:Type local:ModuleTree}"
+                                          ItemsSource="{Binding Modules}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{Binding Image, UpdateSourceTrigger=PropertyChanged}" Width="20" Margin="3"/>
+                        <TextBlock Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" VerticalAlignment="Center"/>
+                        <TextBlock Text="[" Foreground="Green" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding Count, UpdateSourceTrigger=PropertyChanged}" Foreground="Green" VerticalAlignment="Center"/>
+                        <TextBlock Text="]" Foreground="Green" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </HierarchicalDataTemplate>
+                
+                <Style TargetType="TreeViewItem">
+                    <Setter Property="IsSelected"
+                            Value="{Binding IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <Setter Property="IsExpanded"
+                            Value="{Binding IsExpanded, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </Style>
+                
+                <DataTemplate DataType="{x:Type modules:ElectroFence}">
+                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                        <TextBlock Text="{Binding _Name}" Foreground="Yellow"/>
+                        <TextBlock Text="[" Foreground="{StaticResource ForegroundAddress}"/>
+                        <TextBlock Text="{Binding Address}" Foreground="{StaticResource ForegroundAddress}"/>
+                        <TextBlock Text="{Binding _EndPoint}" Foreground="{StaticResource ForegroundAddress}"/>
+                        <TextBlock Text="]" Foreground="{StaticResource ForegroundAddress}"/>
+                    </StackPanel>
+                </DataTemplate>
+                
+                <DataTemplate DataType="{x:Type modules:FlexiGuard}">
+                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                        <TextBlock Text="{Binding _Name}" Foreground="Green"/>
+                        <TextBlock Text="[" Foreground="{StaticResource ForegroundAddress}"/>
+                        <TextBlock Text="{Binding Address}" Foreground="{StaticResource ForegroundAddress}"/>
+                        <TextBlock Text="{Binding _EndPoint}" Foreground="{StaticResource ForegroundAddress}"/>
+                        <TextBlock Text="]" Foreground="{StaticResource ForegroundAddress}"/>
+                    </StackPanel>
+                </DataTemplate>
+                
+                <DataTemplate DataType="{x:Type modules:AlarmControlUnit}">
+                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                        <TextBlock Text="{Binding _Name}" Foreground="Red"/>
+                        <TextBlock Text="[" Foreground="{StaticResource ForegroundAddress}"/>
+                        <TextBlock Text="{Binding Address}" Foreground="{StaticResource ForegroundAddress}"/>
+                        <TextBlock Text="{Binding _EndPoint}" Foreground="{StaticResource ForegroundAddress}"/>
+                        <TextBlock Text="]" Foreground="{StaticResource ForegroundAddress}"/>
+                    </StackPanel>
+                </DataTemplate>
+                
+                <DataTemplate DataType="{x:Type modules:Camera}">
+                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                        <TextBlock Text="{Binding _Name}" Foreground="Cyan"/>
+                        <TextBlock Text="[" Foreground="{StaticResource ForegroundAddress}"/>
+                        <TextBlock Text="{Binding IP}" Foreground="{StaticResource ForegroundAddress}"/>
+                        <TextBlock Text=":" Foreground="{StaticResource ForegroundAddress}"/>
+                        <TextBlock Text="{Binding Port}" Foreground="{StaticResource ForegroundAddress}"/>
+                        <TextBlock Text="]" Foreground="{StaticResource ForegroundAddress}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </TreeView.Resources>
+        </TreeView>
+        
+        <ContentControl Grid.Column="1" Content="{Binding ModuleView, UpdateSourceTrigger=PropertyChanged}"/>
+    </Grid>
+</UserControl>

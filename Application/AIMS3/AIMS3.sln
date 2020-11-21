@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.156
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIMS3", "AIMS\AIMS3.csproj", "{729A0F9A-5A34-47BD-8F8D-B48BAC5DC3E7}"
+EndProject
+Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "Installer", "Installer\Installer.aiproj", "{1656CBA1-D720-4E97-8C32-7CA890B65DB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		All|Any CPU = All|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{729A0F9A-5A34-47BD-8F8D-B48BAC5DC3E7}.All|Any CPU.ActiveCfg = Release|Any CPU
+		{729A0F9A-5A34-47BD-8F8D-B48BAC5DC3E7}.All|Any CPU.Build.0 = Release|Any CPU
+		{729A0F9A-5A34-47BD-8F8D-B48BAC5DC3E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{729A0F9A-5A34-47BD-8F8D-B48BAC5DC3E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{729A0F9A-5A34-47BD-8F8D-B48BAC5DC3E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{729A0F9A-5A34-47BD-8F8D-B48BAC5DC3E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1656CBA1-D720-4E97-8C32-7CA890B65DB0}.All|Any CPU.ActiveCfg = DefaultBuild
+		{1656CBA1-D720-4E97-8C32-7CA890B65DB0}.All|Any CPU.Build.0 = DefaultBuild
+		{1656CBA1-D720-4E97-8C32-7CA890B65DB0}.Debug|Any CPU.ActiveCfg = DefaultBuild
+		{1656CBA1-D720-4E97-8C32-7CA890B65DB0}.Debug|Any CPU.Build.0 = DefaultBuild
+		{1656CBA1-D720-4E97-8C32-7CA890B65DB0}.Release|Any CPU.ActiveCfg = DefaultBuild
+		{1656CBA1-D720-4E97-8C32-7CA890B65DB0}.Release|Any CPU.Build.0 = DefaultBuild
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3DBF531A-08E4-4D0D-9D56-25BECE8B1E75}
+	EndGlobalSection
+EndGlobal
