@@ -93,7 +93,9 @@ namespace AIMS3.BackEnd.Modules
 					if (!Connect())
 						return false;
 
-				stream.Flush();
+                while (stream.DataAvailable)
+                    stream.ReadByte();
+
                 stream.Write(data, 0, data.Length);
 
                 return true;
