@@ -130,7 +130,7 @@ namespace AIMS3.BackEnd.Modules
 			WpfSvgRenderer.CreateImageSource(SvgImageHelper.CreateImage(
 				new Uri("pack://application:,,,/Resources/Icons/FaultList/HV.svg")), 1d, null, null, true),
 			WpfSvgRenderer.CreateImageSource(SvgImageHelper.CreateImage(
-				new Uri("pack://application:,,,/Resources/Icons/FaultList/LV.svg")), 1d, null, null, true),
+				new Uri("pack://application:,,,/Resources/Icons/FaultList/HV.svg")), 1d, null, null, true),
 			WpfSvgRenderer.CreateImageSource(SvgImageHelper.CreateImage(
 				new Uri("pack://application:,,,/Resources/Icons/FaultList/Other.svg")), 1d, null, null, true),
 			WpfSvgRenderer.CreateImageSource(SvgImageHelper.CreateImage(
