@@ -18,40 +18,42 @@ using static AIMS3.BackEnd.Modules.Module;
 
 namespace AIMS3.FrontEnd.Modules.Common
 {
-    public partial class RelayView : UserControl
+  public partial class RelayView : UserControl
+  {
+    Relay Relay { get; set; }
+
+    public RelayView() { }
+
+    public RelayView(Relay relay)
     {
-        Relay Relay { get; set; }
+      InitializeComponent();
 
-		public RelayView() { }
+      Relay = relay;
+      DataContext = Relay;
+    }
 
-		public RelayView(Relay relay)
-        {
-            InitializeComponent();
+    public void Save()
+    {
+      toggleSwitchEnable.GetBindingExpression(ToggleSwitch.IsCheckedProperty).UpdateSource();
+      toggleSwitchState.GetBindingExpression(ToggleSwitch.IsCheckedProperty).UpdateSource();
+    }
 
-            Relay = relay;
-            DataContext = Relay;
-        }
+    public void Load()
+    {
+      toggleSwitchEnable.GetBindingExpression(ToggleSwitch.IsCheckedProperty).UpdateTarget();
+      toggleSwitchState.GetBindingExpression(ToggleSwitch.IsCheckedProperty).UpdateTarget();
+    }
 
-        public void Save()
-        {
-            toggleSwitchEnable.GetBindingExpression(ToggleSwitch.IsCheckedProperty).UpdateSource();
-            toggleSwitchState.GetBindingExpression(ToggleSwitch.IsCheckedProperty).UpdateSource();
-        }
+    private void Set_Click(object sender, RoutedEventArgs e)
+    {
+      Relay.SetNeeded = true;
+      Relay.ResetNeeded = false;
+    }
 
-        public void Load()
-        {
-            toggleSwitchEnable.GetBindingExpression(ToggleSwitch.IsCheckedProperty).UpdateTarget();
-            toggleSwitchState.GetBindingExpression(ToggleSwitch.IsCheckedProperty).UpdateTarget();
-        }
-
-		private void Set_Click(object sender, RoutedEventArgs e)
-		{
-			Relay.Set();
-		}
-
-		private void Reset_Click(object sender, RoutedEventArgs e)
-		{
-			Relay.Reset();
-		}
-	}
+    private void Reset_Click(object sender, RoutedEventArgs e)
+    {
+      Relay.ResetNeeded = false;
+      Relay.SetNeeded = true;
+    }
+  }
 }
