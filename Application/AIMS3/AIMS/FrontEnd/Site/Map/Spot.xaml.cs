@@ -25,7 +25,7 @@ namespace AIMS3.FrontEnd.Site.Map
 	public partial class Spot : UserControl, INotifyPropertyChanged
 	{
 		public event PropertyChangedEventHandler PropertyChanged;
-		public void OnPropertyChanged([CallerMemberName]string name = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+		public void OnPropertyChanged([CallerMemberName] string name = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 
 		private ITelemetricSite site;
 		public virtual ITelemetricSite Site
@@ -138,10 +138,10 @@ namespace AIMS3.FrontEnd.Site.Map
 
 		private enum ImageSourceName { EFIdle, EFOff, EFRaised, FGIdle, FGOff, FGRaised, OutIdle, OutOff, OutRaised }
 
-		private List<ImageSource> ImageSources { get; } = new List<ImageSource>()
+		private static List<ImageSource> ImageSources { get; } = new List<ImageSource>()
 		{
 			WpfSvgRenderer.CreateImageSource(SvgImageHelper.CreateImage(
-			new Uri("pack://application:,,,/Resources/Icons/Map/EFIdle.svg")), 1d, null, null, true),
+				new Uri("pack://application:,,,/Resources/Icons/Map/EFIdle.svg")), 1d, null, null, true),
 			WpfSvgRenderer.CreateImageSource(SvgImageHelper.CreateImage(
 			new Uri("pack://application:,,,/Resources/Icons/Map/EFOff.svg")), 1d, null, null, true),
 			WpfSvgRenderer.CreateImageSource(SvgImageHelper.CreateImage(
