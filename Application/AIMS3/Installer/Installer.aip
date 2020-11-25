@@ -5,8 +5,8 @@
     <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
     <ROW Property="ALLUSERS" Value="1"/>
     <ROW Property="ARPNOREPAIR" MultiBuildValue="DefaultBuild:1"/>
-    <ROW Property="ARPPRODUCTICON" Value="Icon2.exe" Type="8"/>
-    <ROW Property="AppLogoIcon" Value="applogoicon" MultiBuildValue="DefaultBuild:ico" Type="1" MsiKey="AppLogoIcon"/>
+    <ROW Property="ARPPRODUCTICON" Value="Icon2_1.exe" Type="8"/>
+    <ROW Property="AppLogoIcon" Value="applogoicon" MultiBuildValue="DefaultBuild:Icon2.ico" Type="1" MsiKey="AppLogoIcon"/>
     <ROW Property="Manufacturer" Value="EHP"/>
     <ROW Property="ProductCode" Value="1033:{5B759A73-D418-4B73-A8EA-785194A3215E} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
@@ -2680,7 +2680,7 @@
     <ROW File="libgoom_plugin.dll_1" Component_="libgoom_plugin.dll_1" FileName="LIBGOO~1.DLL|libgoom_plugin.dll" Attributes="0" SourcePath="..\AIMS\bin\Release\libvlc\win-x86\plugins\visualization\libgoom_plugin.dll" SelfReg="false"/>
     <ROW File="libprojectm_plugin.dll_1" Component_="libprojectm_plugin.dll_1" FileName="LIBPRO~1.DLL|libprojectm_plugin.dll" Attributes="0" SourcePath="..\AIMS\bin\Release\libvlc\win-x86\plugins\visualization\libprojectm_plugin.dll" SelfReg="false"/>
     <ROW File="libvisual_plugin.dll_1" Component_="libvisual_plugin.dll_1" FileName="LIBVIS~1.DLL|libvisual_plugin.dll" Attributes="0" SourcePath="..\AIMS\bin\Release\libvlc\win-x86\plugins\visualization\libvisual_plugin.dll" SelfReg="false"/>
-    <ROW File="CameraBrands.acb" Component_="CameraBrands.acb" FileName="CAMERA~1.ACB|Camera Brands.acb" Attributes="0" SourcePath="..\..\..\..\..\..\Documents\EHP\AIMS 3\Camera Brands.acb" SelfReg="false"/>
+    <ROW File="CameraBrands.acb" Component_="CameraBrands.acb" FileName="CAMERA~1.ACB|Camera Brands.acb" Attributes="0" SourcePath="C:\Users\EHP\Documents\EHP\AIMS 3\Camera Brands.acb" SelfReg="false"/>
     <ROW File="AIMS3.exe" Component_="AIMS3.exe" FileName="AIMS3.exe" Attributes="0" SourcePath="..\AIMS\bin\Release\app.publish\AIMS3_Secure\AIMS3.exe" SelfReg="false" DigSign="true"/>
     <ROW File="AIMS3.exe.config" Component_="AIMS3.exe.config" FileName="AIMS3E~1.CON|AIMS3.exe.config" Attributes="0" SourcePath="..\AIMS\bin\Release\AIMS3.exe.config" SelfReg="false"/>
     <ROW File="AxInterop.ARM.dll" Component_="AxInterop.ARM.dll" FileName="AXINTE~1.DLL|AxInterop.ARM.dll" Attributes="0" SourcePath="..\AIMS\bin\Release\AxInterop.ARM.dll" SelfReg="false"/>
@@ -2777,10 +2777,10 @@
     <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_CU" Builds="DefaultBuild"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="Icon2.ico" SourcePath="..\AIMS\Resources\Icons\Logo\Icon2.ico"/>
     <ROW Name="Prereq.dll" SourcePath="&lt;AI_CUSTACTS&gt;Prereq.dll"/>
     <ROW Name="ShortcutFlags.dll" SourcePath="&lt;AI_CUSTACTS&gt;ShortcutFlags.dll"/>
     <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
-    <ROW Name="ico" SourcePath="..\..\..\..\..\..\Desktop\New folder\304971.ico"/>
     <ROW Name="lzmaextractor.dll" SourcePath="&lt;AI_CUSTACTS&gt;lzmaextractor.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
@@ -3924,7 +3924,7 @@
     <ROW Feature_="MainFeature" Component_="AI_ExePath"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
-    <ROW Name="Icon2.exe" SourcePath="..\AIMS\Resources\Icons\Logo\Icon2.ico" Index="0"/>
+    <ROW Name="Icon2_1.exe" SourcePath="..\AIMS\Icon2.ico" Index="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
     <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
