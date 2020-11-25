@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading;
+
 using AIMS3.BackEnd.Modules;
 
 using static AIMS3.BackEnd.Modules.Connection;
@@ -59,8 +60,6 @@ namespace AIMS3.BackEnd.Site
 		Thread loopThread;
 		public void RefreshList()
 		{
-			//Close();
-
 			lock (loopLockObject)
 			{
 				EF = Plant.EF.FindAll(ef => !string.IsNullOrEmpty(IPEndPoint) ? (ef.EndPoint == IPEndPoint && ef.ConnectionType == ModuleConnectionType.TCP) : ef.ConnectionType == ModuleConnectionType.Serial).ToList();
@@ -165,10 +164,19 @@ namespace AIMS3.BackEnd.Site
 						if (!Connected)
 							Thread.Sleep(100);
 
-						if (TCPConnection == null && Analyzers.FindIndex(module => module.Initialized) < 0)
+						if (Analyzers.FindIndex(module => module.Initialized) < 0)
 						{
-							Thread.Sleep(100);
-							SerialConnection.Disconnect();
+							Thread.Sleep(500);
+
+							if (TCPConnection == null)
+								SerialConnection.Disconnect();
+
+							else
+							{
+								TCPConnection.Close();
+
+								Thread.Sleep(1000);
+							}
 						}
 
 						if (Count == 0)
