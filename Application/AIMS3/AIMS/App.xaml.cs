@@ -21,7 +21,7 @@ namespace AIMS3
 	{
 		static new MainWindow MainWindow { get => Common.MainWindow; set => Common.MainWindow = value; }
 		LoginWindow LoginWindow { get; set; }
-		static readonly Mutex mutex = new Mutex(true, "AIMS");
+		static readonly Mutex mutex = new Mutex(true, "AIMS3");
 		private DummyForm dummy;
 
 		public App()
