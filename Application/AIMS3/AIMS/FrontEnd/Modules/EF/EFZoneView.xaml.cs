@@ -19,14 +19,6 @@ namespace AIMS3.FrontEnd.Modules.EF
 			InitializeComponent();
 		}
 
-		public override void Save()
-		{
-			base.Save();
-
-			if (Fault.Module.ZoneType == BackEnd.Modules.ElectroFence.ModuleZonesType.TwoZonesCommon)
-				Fault.Module.CopyZones(Fault.Index);
-		}
-
 		private void Enabled_Checked(object sender, System.Windows.RoutedEventArgs e)
 		{
 			if (checkEditHV.IsChecked == false && checkEditLV.IsChecked == false)
