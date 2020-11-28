@@ -40,7 +40,7 @@ namespace AIMS3.FrontEnd.Modules.Interfaces
 			Load();
 		}
 
-		public async virtual void Save()
+		public async void Save()
 		{
 			try
 			{
@@ -49,6 +49,32 @@ namespace AIMS3.FrontEnd.Modules.Interfaces
 				BindingGroup.UpdateSources();
 				RelayAssign.Save();
 				CameraAssign.Save();
+
+
+				if (Fault.OwnerType == Module.ModuleType.EF && Fault.Module.ZoneType == ElectroFence.ModuleZonesType.TwoZonesCommon)
+					Fault.Module.CopyZones(Fault.Index);
+
+				bool? result;
+
+				Fault.Module.Initialized = false;
+
+				result = await Site.AuthenticateModifyModule(Fault.Module).ConfigureAwait(false);
+
+				if (result == true)
+				{
+					Plant.SaveModules(true);
+
+					if (Site.Type == SiteType.Local)
+						return;
+				}
+
+				else
+				{
+					Load();
+					Fault.Module.Upload(temp);
+				}
+
+				ShowMessageBoxAuthentication(result);
 			}
 			catch (Exception ex) { WriteToDebug(typeof(ZoneView), Fault.Name, nameof(Save), ex); }
 		}
